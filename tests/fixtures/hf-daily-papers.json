@@ -1,0 +1,745 @@
+[
+  {
+    "paper": {
+      "id": "2610.22352",
+      "authors": [
+        {
+          "_id": "6ad1da588304c5d882d7ba37",
+          "user": {
+            "_id": "6acf884afae2645be6242d8c",
+            "avatarUrl": "/avatars/04249f7de39c7ee542b7598f4260b8c5.svg",
+            "isPro": false,
+            "fullname": "chen flank",
+            "user": "supra3d",
+            "type": "user",
+            "name": "supra3d"
+          },
+          "name": "Chen Yang",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-10-16T08:28:53.296Z",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1da588304c5d882d7ba38",
+          "name": "Jiemin Fang",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1da588304c5d882d7ba39",
+          "name": "Fanpeng Meng",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1da588304c5d882d7ba3a",
+          "name": "Zihao Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1da588304c5d882d7ba3b",
+          "name": "Jichen Pang",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1da588304c5d882d7ba3c",
+          "name": "Guanjun Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1da588304c5d882d7ba3d",
+          "name": "Zhikuan Bao",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1da588304c5d882d7ba3e",
+          "name": "Qi Tian",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6acf884afae2645be6242d8c/5SrSnwdmCeTwQU9MAzJEo.mp4"
+      ],
+      "publishedAt": "2026-10-15T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-10-16T00:00:00.000Z",
+      "title": "SUPRA-TEX: 3D Generation with Super-Aligned Texture",
+      "submittedOnDailyBy": {
+        "_id": "6acf884afae2645be6242d8c",
+        "avatarUrl": "/avatars/04249f7de39c7ee542b7598f4260b8c5.svg",
+        "isPro": false,
+        "fullname": "chen flank",
+        "user": "supra3d",
+        "type": "user",
+        "name": "supra3d"
+      },
+      "summary": "Single image 3D generation aims to dress a given 3D mesh with relightable materials while faithfully preserving the visual details of a reference image. Existing methods either introduce artifacts when fusing inconsistent multi-view predictions or struggle to preserve fine details through implicit image-feature conditioning. To resolve these challenges, we introduce SUPRA-Tex, built on the principle of decoupling visible-material estimation, surface alignment, and observation-guided 3D completion. This division of labor allows the 3D generator, trained on limited 3D data, to focus its capacity on preserving visible evidence and completing unobserved surfaces. Specifically, we first train an MLLM-based image editing model to predict lighting-separated PBR maps in the reference view. We then project these maps onto the visible surface and encode them with the pretrained material VAE encoder into native observation latents that share the generation target's latent space. An interleaved flow transformer holds these latents as fixed, read-only anchors while alternating unobserved-region and full-surface updates to generate complete material latents. This design achieves super-alignment with the reference, delivering What You See Is What You Get fidelity on visible regions and coherent completion on unobserved surfaces. Trained solely on public datasets, SUPRA-Tex achieves SOTA performance in both geometry-conditioned texturing and end-to-end asset generation, matching or even exceeding leading commercial systems on in-the-wild images. Project page: https://supra-3d.github.io/supratex/",
+      "upvotes": 1,
+      "discussionId": "6ad1da598304c5d882d7ba3f",
+      "projectPage": "https://supra-3d.github.io/supratex/",
+      "githubRepo": "https://github.com/Supra-3D/SUPRA-Tex",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "SUPRA-Tex decouples visible-material estimation, surface alignment, and 3D completion to generate relightable 3D materials that preserve reference image details and complete unobserved surfaces.",
+      "ai_keywords": [
+        "single image 3D generation",
+        "PBR maps",
+        "MLLM-based image editing",
+        "material VAE encoder",
+        "observation latents",
+        "interleaved flow transformer",
+        "geometry-conditioned texturing"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small"
+    },
+    "publishedAt": "2026-10-14T20:00:00.000Z",
+    "title": "SUPRA-TEX: 3D Generation with Super-Aligned Texture",
+    "summary": "Single image 3D generation aims to dress a given 3D mesh with relightable materials while faithfully preserving the visual details of a reference image. Existing methods either introduce artifacts when fusing inconsistent multi-view predictions or struggle to preserve fine details through implicit image-feature conditioning. To resolve these challenges, we introduce SUPRA-Tex, built on the principle of decoupling visible-material estimation, surface alignment, and observation-guided 3D completion. This division of labor allows the 3D generator, trained on limited 3D data, to focus its capacity on preserving visible evidence and completing unobserved surfaces. Specifically, we first train an MLLM-based image editing model to predict lighting-separated PBR maps in the reference view. We then project these maps onto the visible surface and encode them with the pretrained material VAE encoder into native observation latents that share the generation target's latent space. An interleaved flow transformer holds these latents as fixed, read-only anchors while alternating unobserved-region and full-surface updates to generate complete material latents. This design achieves super-alignment with the reference, delivering What You See Is What You Get fidelity on visible regions and coherent completion on unobserved surfaces. Trained solely on public datasets, SUPRA-Tex achieves SOTA performance in both geometry-conditioned texturing and end-to-end asset generation, matching or even exceeding leading commercial systems on in-the-wild images. Project page: https://supra-3d.github.io/supratex/",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6acf884afae2645be6242d8c/5SrSnwdmCeTwQU9MAzJEo.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.22352.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6acf884afae2645be6242d8c",
+      "avatarUrl": "/avatars/04249f7de39c7ee542b7598f4260b8c5.svg",
+      "fullname": "chen flank",
+      "name": "supra3d",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2610.21095",
+      "authors": [
+        {
+          "_id": "6ad195e98304c5d882d7b691",
+          "user": {
+            "_id": "665abce1d599adace6d66674",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/665abce1d599adace6d66674/pd6IiwPkbT4ocOySleXga.jpeg",
+            "isPro": false,
+            "fullname": "Selen Su",
+            "user": "selensu",
+            "type": "user",
+            "name": "selensu"
+          },
+          "name": "Yue Su",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-10-16T08:30:36.169Z",
+          "hidden": false
+        },
+        {
+          "_id": "6ad195e98304c5d882d7b692",
+          "name": "Bokai Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6ad195e98304c5d882d7b693",
+          "name": "Xinkai Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6ad195e98304c5d882d7b694",
+          "name": "Chubin Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6ad195e98304c5d882d7b695",
+          "name": "Xiangnan Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6ad195e98304c5d882d7b696",
+          "name": "Kuan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6ad195e98304c5d882d7b697",
+          "name": "Weiyang Jin",
+          "hidden": false
+        },
+        {
+          "_id": "6ad195e98304c5d882d7b698",
+          "name": "Jiwen Yu",
+          "hidden": false
+        },
+        {
+          "_id": "6ad195e98304c5d882d7b699",
+          "name": "Yiming Li",
+          "hidden": false
+        },
+        {
+          "_id": "6ad195e98304c5d882d7b69a",
+          "name": "Cewu Lu",
+          "hidden": false
+        },
+        {
+          "_id": "6ad195e98304c5d882d7b69b",
+          "name": "Lixin Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6ad195e98304c5d882d7b69c",
+          "name": "Xihui Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-10-15T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-10-16T00:00:00.000Z",
+      "title": "Can World and Action Modeling Benefit Each Other under Unified Causal Training?",
+      "submittedOnDailyBy": {
+        "_id": "665abce1d599adace6d66674",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/665abce1d599adace6d66674/pd6IiwPkbT4ocOySleXga.jpeg",
+        "isPro": false,
+        "fullname": "Selen Su",
+        "user": "selensu",
+        "type": "user",
+        "name": "selensu"
+      },
+      "summary": "World and action modeling are closely related, yet their reciprocal benefits under unified causal training remain unclear. We introduce OneWM, a simple framework for unified causal training that treats actions as both conditions for world prediction and targets for policy learning within a shared video-action architecture. Using this framework, we investigate whether learning forward dynamics conditioned on specified actions improves action learning, and whether learning to generate actions in turn improves action-conditioned world modeling. We use LIBERO, LIBERO-Plus, and RoboCasa365 as embodied testbeds to evaluate both policy learning and world modeling, complemented by real-world policy experiments. Learning the visual consequences of specified actions improves policy performance and generalization across changing scenes. In turn, action learning improves multi-view world-prediction fidelity under the same architecture. Together, these results answer both questions positively, supporting reciprocal benefits between world modeling and action generation under unified causal training.",
+      "upvotes": 10,
+      "discussionId": "6ad195ea8304c5d882d7b69d",
+      "projectPage": "https://selen-suyue.github.io/OneWMNet/",
+      "githubRepo": "https://github.com/Interactive-Active-AI/OneWM",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "OneWM unifies causal training of world and action modeling, showing that learning action-conditioned dynamics improves policies and action learning improves multi-view world prediction.",
+      "ai_keywords": [
+        "causal training",
+        "world modeling",
+        "action modeling",
+        "unified architecture",
+        "forward dynamics",
+        "policy learning",
+        "multi-view prediction",
+        "embodied testbeds"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "organization": {
+        "_id": "6a8fd0a4056f4cd846f54876",
+        "name": "IAAI233",
+        "fullname": "Interactive and Active AI",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/665abce1d599adace6d66674/1UOuswyyGcyA-RV7N9xG7.png"
+      }
+    },
+    "publishedAt": "2026-10-14T20:00:00.000Z",
+    "title": "Can World and Action Modeling Benefit Each Other under Unified Causal Training?",
+    "summary": "World and action modeling are closely related, yet their reciprocal benefits under unified causal training remain unclear. We introduce OneWM, a simple framework for unified causal training that treats actions as both conditions for world prediction and targets for policy learning within a shared video-action architecture. Using this framework, we investigate whether learning forward dynamics conditioned on specified actions improves action learning, and whether learning to generate actions in turn improves action-conditioned world modeling. We use LIBERO, LIBERO-Plus, and RoboCasa365 as embodied testbeds to evaluate both policy learning and world modeling, complemented by real-world policy experiments. Learning the visual consequences of specified actions improves policy performance and generalization across changing scenes. In turn, action learning improves multi-view world-prediction fidelity under the same architecture. Together, these results answer both questions positively, supporting reciprocal benefits between world modeling and action generation under unified causal training.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.21095.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "665abce1d599adace6d66674",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/665abce1d599adace6d66674/pd6IiwPkbT4ocOySleXga.jpeg",
+      "fullname": "Selen Su",
+      "name": "selensu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6a8fd0a4056f4cd846f54876",
+      "name": "IAAI233",
+      "fullname": "Interactive and Active AI",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/665abce1d599adace6d66674/1UOuswyyGcyA-RV7N9xG7.png"
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2610.22350",
+      "authors": [
+        {
+          "_id": "6ad1b7bc8304c5d882d7b8f2",
+          "user": {
+            "_id": "6ac2636d349e7269218008a1",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6ac2636d349e7269218008a1/UhCARn1CdGsOtd5dtVTah.jpeg",
+            "isPro": false,
+            "fullname": "Wayland Yang",
+            "user": "WaylandYang",
+            "type": "user",
+            "name": "WaylandYang"
+          },
+          "name": "Dongxu Yang",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-10-16T08:29:41.993Z",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b8f3",
+          "name": "Hongda Yan",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b8f4",
+          "name": "Renxin Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b8f5",
+          "name": "Baoli Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b8f6",
+          "name": "Haojia Zuo",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b8f7",
+          "name": "Ying Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b8f8",
+          "name": "Youmin Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b8f9",
+          "name": "Xiaojian Liao",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b8fa",
+          "name": "Congming Gao",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b8fb",
+          "name": "Tianyang Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b8fc",
+          "name": "Yixiao Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b8fd",
+          "name": "Qing Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b8fe",
+          "name": "Zhiguo Yu",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b8ff",
+          "name": "Xiaqing Li",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b900",
+          "name": "Yuhao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b901",
+          "name": "Jiawen Sun",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b902",
+          "name": "Renzhe Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b903",
+          "name": "De Mi",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b904",
+          "name": "Tiancheng Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b905",
+          "name": "Xianya Fu",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b906",
+          "name": "Xuanlu Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b907",
+          "name": "Bo Feng",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b908",
+          "name": "Meixuan Ren",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b909",
+          "name": "Guanming Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b90a",
+          "name": "Ziheng Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1b7bc8304c5d882d7b90b",
+          "name": "Xinhua Wang",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6ac2636d349e7269218008a1/sQsPuxkzLkPPGzEbW4C7j.webp",
+        "https://cdn-uploads.huggingface.co/production/uploads/6ac2636d349e7269218008a1/VbIyg8QKzX5mB5gWBKSX3.webp"
+      ],
+      "publishedAt": "2026-10-15T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-10-16T00:00:00.000Z",
+      "title": "FDE-Gym: The Last Mile of AI Delivery",
+      "submittedOnDailyBy": {
+        "_id": "6ac2636d349e7269218008a1",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6ac2636d349e7269218008a1/UhCARn1CdGsOtd5dtVTah.jpeg",
+        "isPro": false,
+        "fullname": "Wayland Yang",
+        "user": "WaylandYang",
+        "type": "user",
+        "name": "WaylandYang"
+      },
+      "summary": "Existing agent benchmarks typically evaluate agents on well-specified tasks defined by issue reports, specifications, or task tickets. Real-world customer delivery is different: forward-deployed engineers (FDEs) must clarify ambiguous requirements, work in live systems, and uncover unstated constraints. We introduce FDE-Gym, a benchmark of 95 end-to-end delivery tasks from 20 customer scenarios across 18 sectors, each adapted by industry experts from real-world delivery projects. In simulated customer environments with scripted stakeholders and modifiable customer systems, agents interact with stakeholders and operate on production-like systems to deliver working solutions. FDE-Gym scores a delivery by how much it improves the customer's own success metric, normalized between 0 (unchanged system) and 1 (reference solution), with penalties for stakeholder interactions (messages, trial runs, and waiting time). An online platform lets humans practice FDE skills under the same grading criteria. We evaluate 13 model configurations from seven providers. In the realistic setting, where unstated constraints must be discovered, the best configuration achieves a mean FDE-Gym score of 0.56 and resolves only 14 of the 95 tasks (a score of at least 0.8 with no incident). Discovering unstated constraints is the primary bottleneck: performance drops sharply when models must uncover them without explicit guidance. Yet information discovery alone does not account for the gap: even on the 23 tasks where the best configuration obtains every key fact from stakeholders, it reaches a normalized business uplift of 0.8 or above on only 10. These results reveal a substantial gap between solving well-specified tasks and delivering effective AI systems for real customers.",
+      "upvotes": 1,
+      "discussionId": "6ad1b7bc8304c5d882d7b90c",
+      "projectPage": "https://fde-gym.com/paper",
+      "githubRepo": "https://github.com/deeplethe/fde-gym",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "FDE-Gym evaluates AI agents on realistic customer delivery tasks requiring clarification of ambiguous requirements and discovery of unstated constraints, revealing a substantial performance gap compared to well-specified benchmarks.",
+      "ai_keywords": [
+        "FDE-Gym",
+        "end-to-end delivery tasks",
+        "simulated customer environments",
+        "stakeholder interactions",
+        "success metric normalization",
+        "unstated constraints",
+        "information discovery"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 93,
+      "organization": {
+        "_id": "6ac263f7c652babc295e8ead",
+        "name": "DeepLethe",
+        "fullname": "DeepLethe",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6ac2636d349e7269218008a1/SV5YhD6lkANfVOriP01H4.png"
+      }
+    },
+    "publishedAt": "2026-10-14T20:00:00.000Z",
+    "title": "FDE-Gym: The Last Mile of AI Delivery",
+    "summary": "Existing agent benchmarks typically evaluate agents on well-specified tasks defined by issue reports, specifications, or task tickets. Real-world customer delivery is different: forward-deployed engineers (FDEs) must clarify ambiguous requirements, work in live systems, and uncover unstated constraints. We introduce FDE-Gym, a benchmark of 95 end-to-end delivery tasks from 20 customer scenarios across 18 sectors, each adapted by industry experts from real-world delivery projects. In simulated customer environments with scripted stakeholders and modifiable customer systems, agents interact with stakeholders and operate on production-like systems to deliver working solutions. FDE-Gym scores a delivery by how much it improves the customer's own success metric, normalized between 0 (unchanged system) and 1 (reference solution), with penalties for stakeholder interactions (messages, trial runs, and waiting time). An online platform lets humans practice FDE skills under the same grading criteria. We evaluate 13 model configurations from seven providers. In the realistic setting, where unstated constraints must be discovered, the best configuration achieves a mean FDE-Gym score of 0.56 and resolves only 14 of the 95 tasks (a score of at least 0.8 with no incident). Discovering unstated constraints is the primary bottleneck: performance drops sharply when models must uncover them without explicit guidance. Yet information discovery alone does not account for the gap: even on the 23 tasks where the best configuration obtains every key fact from stakeholders, it reaches a normalized business uplift of 0.8 or above on only 10. These results reveal a substantial gap between solving well-specified tasks and delivering effective AI systems for real customers.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6ac2636d349e7269218008a1/sQsPuxkzLkPPGzEbW4C7j.webp",
+      "https://cdn-uploads.huggingface.co/production/uploads/6ac2636d349e7269218008a1/VbIyg8QKzX5mB5gWBKSX3.webp"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.22350.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6ac2636d349e7269218008a1",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6ac2636d349e7269218008a1/UhCARn1CdGsOtd5dtVTah.jpeg",
+      "fullname": "Wayland Yang",
+      "name": "WaylandYang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6ac263f7c652babc295e8ead",
+      "name": "DeepLethe",
+      "fullname": "DeepLethe",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6ac2636d349e7269218008a1/SV5YhD6lkANfVOriP01H4.png"
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2610.12625",
+      "authors": [
+        {
+          "_id": "6ad1e3248304c5d882d7ba81",
+          "name": "Zekai Gu",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1e3248304c5d882d7ba82",
+          "name": "Peng Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1e3248304c5d882d7ba83",
+          "name": "Jiahao Lu",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1e3248304c5d882d7ba84",
+          "name": "Yongsen Mao",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1e3248304c5d882d7ba85",
+          "name": "Cheng Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1e3248304c5d882d7ba86",
+          "name": "Yuan Liu",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/64789f602b3730b6b63d5eb3/ae-57NHqqsnVswHfvm2n3.mp4",
+        "https://cdn-uploads.huggingface.co/production/uploads/64789f602b3730b6b63d5eb3/fXpfIcQEhWVHDZjN5xAr-.png"
+      ],
+      "publishedAt": "2026-10-08T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-10-16T00:00:00.000Z",
+      "title": "ForcingBooster: Adaptive Patch-wise Denoising for Fast Autoregressive Video Diffusion",
+      "submittedOnDailyBy": {
+        "_id": "64789f602b3730b6b63d5eb3",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64789f602b3730b6b63d5eb3/9MjDzU2yN8uLazRbaccPH.jpeg",
+        "isPro": false,
+        "fullname": "Zekai Gu",
+        "user": "EXCAI",
+        "type": "user",
+        "name": "EXCAI"
+      },
+      "summary": "Autoregressive video diffusion models have become a leading approach to real-time interactive video generation and video world modeling. However, existing methods typically allocate computation uniformly across space when generating the next video chunk, updating all patches with the same denoising schedule and number of function evaluations. This ignores the spatial heterogeneity of video content: static, simple, or recurring regions are often easier to denoise, while other regions require further refinement or additional context. A uniform budget thus leads to redundant computation on easy patches, whereas reducing the fixed step count can leave difficult patches insufficiently refined. We introduce , a general framework that dynamically allocates denoising steps to individual patches: easy patches stop early to improve efficiency, while difficult patches receive more refinement steps. This design accelerates generation with negligible quality degradation. Our method is compatible with most existing few-step autoregressive diffusion models, requiring only a lightweight routing module with modest training. Experiments demonstrate that  reduces the total number of denoising steps applied across video patches by about 50\\% while maintaining visual quality comparable to the four-step baseline.",
+      "upvotes": 0,
+      "discussionId": "6ad1e3248304c5d882d7ba87",
+      "projectPage": "https://igl-hkust.github.io/ForcingBooster",
+      "githubRepo": "https://github.com/IGL-HKUST/ForcingBooster",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "A framework dynamically assigns denoising steps to video patches based on difficulty, cutting computation by half while preserving quality.",
+      "ai_keywords": [
+        "autoregressive video diffusion models",
+        "denoising steps",
+        "spatial heterogeneity",
+        "routing module",
+        "few-step diffusion"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 2,
+      "organization": {
+        "_id": "6547a68308deaa0c9106df85",
+        "name": "VAST-AI",
+        "fullname": "VAST-AI-Research",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6547a64451c10a6f8b1fb1c7/gxjWWcL_GBC-Z3pTiBYVc.png"
+      }
+    },
+    "publishedAt": "2026-10-07T20:00:00.000Z",
+    "title": "ForcingBooster: Adaptive Patch-wise Denoising for Fast Autoregressive Video Diffusion",
+    "summary": "Autoregressive video diffusion models have become a leading approach to real-time interactive video generation and video world modeling. However, existing methods typically allocate computation uniformly across space when generating the next video chunk, updating all patches with the same denoising schedule and number of function evaluations. This ignores the spatial heterogeneity of video content: static, simple, or recurring regions are often easier to denoise, while other regions require further refinement or additional context. A uniform budget thus leads to redundant computation on easy patches, whereas reducing the fixed step count can leave difficult patches insufficiently refined. We introduce , a general framework that dynamically allocates denoising steps to individual patches: easy patches stop early to improve efficiency, while difficult patches receive more refinement steps. This design accelerates generation with negligible quality degradation. Our method is compatible with most existing few-step autoregressive diffusion models, requiring only a lightweight routing module with modest training. Experiments demonstrate that  reduces the total number of denoising steps applied across video patches by about 50\\% while maintaining visual quality comparable to the four-step baseline.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/64789f602b3730b6b63d5eb3/ae-57NHqqsnVswHfvm2n3.mp4",
+      "https://cdn-uploads.huggingface.co/production/uploads/64789f602b3730b6b63d5eb3/fXpfIcQEhWVHDZjN5xAr-.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.12625.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64789f602b3730b6b63d5eb3",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64789f602b3730b6b63d5eb3/9MjDzU2yN8uLazRbaccPH.jpeg",
+      "fullname": "Zekai Gu",
+      "name": "EXCAI",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 9,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6547a68308deaa0c9106df85",
+      "name": "VAST-AI",
+      "fullname": "VAST-AI-Research",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6547a64451c10a6f8b1fb1c7/gxjWWcL_GBC-Z3pTiBYVc.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2610.21656",
+      "authors": [
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7d6",
+          "user": {
+            "_id": "670298d5be7125dd6a4862d1",
+            "avatarUrl": "/avatars/6fd81c3e086d4cf8ce1ebfce5cdd9b3c.svg",
+            "isPro": false,
+            "fullname": "Zhanli Li",
+            "user": "Zhanli-Li",
+            "type": "user",
+            "name": "Zhanli-Li"
+          },
+          "name": "Zhanli Li",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-10-16T08:30:00.114Z",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7d7",
+          "name": "Zeyuan Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7d8",
+          "name": "Chaoxu Pang",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7d9",
+          "name": "Zeyuan Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7da",
+          "name": "Anyang Ji",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7db",
+          "name": "Te Sun",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7dc",
+          "name": "Kongcheng Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7dd",
+          "name": "Wenbo Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7de",
+          "name": "Xubin Yue",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7df",
+          "name": "Shipeng Luo",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7e0",
+          "name": "Junjie Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7e1",
+          "name": "Yingfan Hua",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7e2",
+          "name": "Jingqing Ruan",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7e3",
+          "name": "Zhongda Su",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7e4",
+          "name": "Feng Hong",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7e5",
+          "name": "Zhizhao Zeng",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7e6",
+          "name": "Ke Zeng",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7e7",
+          "name": "Xunliang Cai",
+          "hidden": false
+        },
+        {
+          "_id": "6ad1a0cb8304c5d882d7b7e8",
+          "name": "Hanjia Ye",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-10-15T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-10-16T00:00:00.000Z",
+      "title": "Data World: Scaling Data Environments from Scratch",
+      "submittedOnDailyBy": {
+        "_id": "670298d5be7125dd6a4862d1",
+        "avatarUrl": "/avatars/6fd81c3e086d4cf8ce1ebfce5cdd9b3c.svg",
+        "isPro": false,
+        "fullname": "Zhanli Li",
+        "user": "Zhanli-Li",
+        "type": "user",
+        "name": "Zhanli-Li"
+      },
+      "summary": "Data agents use code to process heterogeneous files and derive analytical insights. Scaling their training faces costly environment curation, privacy and intellectual-property restrictions, and difficulty verifying open-ended findings without known generative truth. Our core insight is to specify the world behind the files before generating the files themselves. We introduce Data World, a multi-agent engine that synthesizes environments, tasks, and rubrics from explicit mechanisms. Independent audits check target recoverability from observed files; rubrics support evaluation and RL rewards. Human preference-based curation for question realism selects 100 tasks across 50 held-out worlds and 16 domains for DataWorld-Bench. The engine also yields 2,135 training tasks from 1,037 disjoint worlds. Evaluation of ten frontier models shows that the benchmark remains challenging, particularly for insight discovery, with a consistent computation-insight gap. RL-zero training on the synthesized tasks produces DataWorld-35B-A3B from Qwen3.6-35B-A3B without trajectory distillation. Under matched evaluation, it improves over its base by 7.06 points on DataWorld-Bench, 14.28 on DAComp, 20.90 on DABstep-Hard, and 12.13 on JobBench, a broader occupational benchmark.",
+      "upvotes": 15,
+      "discussionId": "6ad1a0cb8304c5d882d7b7e9",
+      "projectPage": "https://zhanli-li.github.io/Data-World/",
+      "githubRepo": "https://github.com/Zhanli-Li/Data-World",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "A multi-agent engine synthesizes data environments and tasks to train models for analytical insight discovery, improving performance across benchmarks without trajectory distillation.",
+      "ai_keywords": [
+        "multi-agent engine",
+        "RL-zero training",
+        "trajectory distillation",
+        "insight discovery",
+        "computation-insight gap",
+        "DataWorld-Bench"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 13,
+      "organization": {
+        "_id": "68b28d79a176a9beb30d2049",
+        "name": "meituan-longcat",
+        "fullname": "LongCat",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/68a2a29ab9d4c5698e02c747/CDCAx7X7rXDt7xjI-DoxG.png"
+      }
+    },
+    "publishedAt": "2026-10-14T20:00:00.000Z",
+    "title": "Data World: Scaling Data Environments from Scratch",
+    "summary": "Data agents use code to process heterogeneous files and derive analytical insights. Scaling their training faces costly environment curation, privacy and intellectual-property restrictions, and difficulty verifying open-ended findings without known generative truth. Our core insight is to specify the world behind the files before generating the files themselves. We introduce Data World, a multi-agent engine that synthesizes environments, tasks, and rubrics from explicit mechanisms. Independent audits check target recoverability from observed files; rubrics support evaluation and RL rewards. Human preference-based curation for question realism selects 100 tasks across 50 held-out worlds and 16 domains for DataWorld-Bench. The engine also yields 2,135 training tasks from 1,037 disjoint worlds. Evaluation of ten frontier models shows that the benchmark remains challenging, particularly for insight discovery, with a consistent computation-insight gap. RL-zero training on the synthesized tasks produces DataWorld-35B-A3B from Qwen3.6-35B-A3B without trajectory distillation. Under matched evaluation, it improves over its base by 7.06 points on DataWorld-Bench, 14.28 on DAComp, 20.90 on DABstep-Hard, and 12.13 on JobBench, a broader occupational benchmark.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.21656.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "670298d5be7125dd6a4862d1",
+      "avatarUrl": "/avatars/6fd81c3e086d4cf8ce1ebfce5cdd9b3c.svg",
+      "fullname": "Zhanli Li",
+      "name": "Zhanli-Li",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "68b28d79a176a9beb30d2049",
+      "name": "meituan-longcat",
+      "fullname": "LongCat",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/68a2a29ab9d4c5698e02c747/CDCAx7X7rXDt7xjI-DoxG.png"
+    },
+    "isAuthorParticipating": true
+  }
+]

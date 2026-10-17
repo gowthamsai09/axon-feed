@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:https://github.com/run-llama/llama_index/releases</id>
+  <link type="text/html" rel="alternate" href="https://github.com/run-llama/llama_index/releases"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/run-llama/llama_index/releases.atom"/>
+  <title>Release notes from llama_index</title>
+  <updated>2026-09-21T16:20:40Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Repository/560704231/v0.14.25</id>
+    <updated>2026-09-21T16:22:27Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/run-llama/llama_index/releases/tag/v0.14.25"/>
+    <title>v0.14.25</title>
+    <content type="html">&lt;h1&gt;Release Notes&lt;/h1&gt;
+&lt;h2&gt;[2026-09-21]&lt;/h2&gt;
+&lt;h3&gt;llama-index-agent-agentmesh [0.3.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: resolve a ton of security alerts (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22855&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22855/hovercard&quot;&gt;#22855&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-agent-azure [0.4.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: resolve a ton of security alerts (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22855&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22855/hovercard&quot;&gt;#22855&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-argilla [0.6.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: resolve a ton of security alerts (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22855&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22855/hovercard&quot;&gt;#22855&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-arize-phoenix [0.8.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: resolve a ton of security alerts (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22855&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22855/hovercard&quot;&gt;#22855&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-honeyhive [0.6.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: resolve a ton of security alerts (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22855&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22855/hovercard&quot;&gt;#22855&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-langfuse [0.6.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: resolve a ton of security alerts (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22855&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22855/hovercard&quot;&gt;#22855&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-literalai [1.5.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: resolve a ton of security alerts (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22855&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22855/hovercard&quot;&gt;#22855&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-openinference [0.6.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: resolve a ton of security alerts (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22855&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22855/hovercard&quot;&gt;#22855&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-opik [1.4.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: resolve a ton of security alerts (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22855&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22855/hovercard&quot;&gt;#22855&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-promptlayer [0.6.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: resolve a ton of security alerts (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22855&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22855/hovercard&quot;&gt;#22855&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-uptrain [0.7.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: resolve a ton of security alerts (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22855&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22855/hovercard&quot;&gt;#22855&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-wandb [0.6.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: resolve a ton of security alerts (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22855&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22855/hovercard&quot;&gt;#22855&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-core [0.14.25]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Remove deprecated ipex-llm and optimum-intel IPEX integrations (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22406&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22406/hovercard&quot;&gt;#22406&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix(core): fall back when metadata replacement target value is None (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22773&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22773/hovercard&quot;&gt;#22773&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;test(core): cover empty arguments in streamed tool calls (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22825&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22825/hovercard&quot;&gt;#22825&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fix: restore compact and refine streaming (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22836&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22836/hovercard&quot;&gt;#22836&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix(core): avoid retrying failed function tools (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22841&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22841/hovercard&quot;&gt;#22841&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;feat(core): add native async support to StructuredLLMRerank (&lt;a</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/560704231/v0.14.24</id>
+    <updated>2026-08-19T18:48:01Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/run-llama/llama_index/releases/tag/v0.14.24"/>
+    <title>v0.14.24</title>
+    <content type="html">&lt;h1&gt;Release Notes&lt;/h1&gt;
+&lt;h2&gt;[2026-08-19]&lt;/h2&gt;
+&lt;h3&gt;llama-index-core [0.14.24]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;fix: close HotpotQA evaluator file handles (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22113&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22113/hovercard&quot;&gt;#22113&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix(core): preserve oversized leaf nodes in CodeSplitter (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22119&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22119/hovercard&quot;&gt;#22119&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix: preserve multiblock chat history writes (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22124&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22124/hovercard&quot;&gt;#22124&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix(core): skip empty nodes in HTMLNodeParser (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22125&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22125/hovercard&quot;&gt;#22125&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix(core): respect mmr_threshold=0 in MMR embedding search (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22126&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22126/hovercard&quot;&gt;#22126&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix: keep all nodes per document in IngestionPipeline upserts (re-submit of &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4702441302&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/run-llama/llama_index/issues/22046&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22046/hovercard&quot; href=&quot;https://github.com/run-llama/llama_index/pull/22046&quot;&gt;#22046&lt;/a&gt;, not a dup of &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4312760716&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/run-llama/llama_index/issues/21456&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21456/hovercard&quot; href=&quot;https://github.com/run-llama/llama_index/pull/21456&quot;&gt;#21456&lt;/a&gt;) (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22133&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22133/hovercard&quot;&gt;#22133&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix: don&#39;t mark *args/**kwargs as required tool parameters (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22135&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22135/hovercard&quot;&gt;#22135&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix(core): default MetadataFilters condition to AND when None (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22155&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22155/hovercard&quot;&gt;#22155&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix: honor agent structured_output_fn/output_cls inside AgentWorkflow (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22162&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22162/hovercard&quot;&gt;#22162&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix(core): use word tokenization for stopword removal in SemanticDoubleMergingSplitterNodeParser (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22167&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22167/hovercard&quot;&gt;#22167&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix(core): restore prompt helper fallback to supplied LLM metadata (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22177&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22177/hovercard&quot;&gt;#22177&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;populate response text on streaming chat response when writing to memory (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22179&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22179/hovercard&quot;&gt;#22179&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;feat(property_graph): add raise_on_error to LLM path extractors (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22195&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22195/hovercard&quot;&gt;#22195&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Clarify FactExtractionMemoryBlock condense prompt to return a full snapshot (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22213&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22213/hovercard&quot;&gt;#22213&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix a few typos (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22512&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22512/hovercard&quot;&gt;#22512&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix(core): give each CitationQueryEngine citation node its own id and offsets (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/22537&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/22537/hovercard&quot;&gt;#22537&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix(core): persist SimpleChatStore without escaping non-ascii (&lt;a</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/560704231/v0.14.23</id>
+    <updated>2026-06-24T19:36:43Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/run-llama/llama_index/releases/tag/v0.14.23"/>
+    <title>v0.14.23</title>
+    <content type="html">&lt;h1&gt;Release Notes&lt;/h1&gt;
+&lt;h2&gt;[2026-06-24]&lt;/h2&gt;
+&lt;h3&gt;llama-index-callbacks-argilla [0.5.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump the uv group across 32 directories with 3 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21664&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21664/hovercard&quot;&gt;#21664&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the uv group across 29 directories with 3 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21665&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21665/hovercard&quot;&gt;#21665&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the uv group across 31 directories with 3 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21668&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21668/hovercard&quot;&gt;#21668&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the pip group across 35 directories with 4 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21714&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21714/hovercard&quot;&gt;#21714&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the uv group across 32 directories with 5 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21717&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21717/hovercard&quot;&gt;#21717&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the uv group across 31 directories with 5 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21719&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21719/hovercard&quot;&gt;#21719&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the uv group across 31 directories with 5 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21720&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21720/hovercard&quot;&gt;#21720&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the uv group across 30 directories with 5 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21721&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21721/hovercard&quot;&gt;#21721&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the uv group across 30 directories with 5 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21722&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21722/hovercard&quot;&gt;#21722&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the pip group across 12 directories with 4 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21724&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21724/hovercard&quot;&gt;#21724&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the uv group across 21 directories with 3 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21725&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21725/hovercard&quot;&gt;#21725&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the pip group across 11 directories with 4 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21726&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21726/hovercard&quot;&gt;#21726&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the uv group across 17 directories with 3 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21727&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21727/hovercard&quot;&gt;#21727&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the uv group across 18 directories with 4 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21733&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21733/hovercard&quot;&gt;#21733&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the uv group across 7 directories with 6 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21736&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21736/hovercard&quot;&gt;#21736&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-core [0.14.23]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;feat(core): Multimodal synthesis part 2 (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21561&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21561/hovercard&quot;&gt;#21561&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix(core): add DocumentBlock and VideoBlock to FunctionTool._parse_tool_output (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21678&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21678/hovercard&quot;&gt;#21678&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix(prompt_helper): guard against ZeroDivisionError on empty input sequences (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21707&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21707/hovercard&quot;&gt;#21707&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Preserve URL-backed video and document memory blocks (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21728&quot; data-hovercard-type=&quot;pull_request&quot;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/560704231/v0.14.22</id>
+    <updated>2026-05-14T20:22:24Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/run-llama/llama_index/releases/tag/v0.14.22"/>
+    <title>v0.14.22</title>
+    <content type="html">&lt;h1&gt;Release Notes&lt;/h1&gt;
+&lt;h2&gt;[2026-05-14]&lt;/h2&gt;
+&lt;h3&gt;llama-index-agent-agentmesh [0.2.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;mass uv lock --upgrade (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21638&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21638/hovercard&quot;&gt;#21638&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-agentops [0.5.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump the pip group across 55 directories with 3 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21435&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21435/hovercard&quot;&gt;#21435&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;mass uv lock --upgrade (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21638&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21638/hovercard&quot;&gt;#21638&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-aim [0.4.1]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;mass uv lock --upgrade (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21638&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21638/hovercard&quot;&gt;#21638&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-argilla [0.5.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump the pip group across 55 directories with 3 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21435&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21435/hovercard&quot;&gt;#21435&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-arize-phoenix [0.7.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump the pip group across 55 directories with 3 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21435&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21435/hovercard&quot;&gt;#21435&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;mass uv lock --upgrade (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21638&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21638/hovercard&quot;&gt;#21638&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-honeyhive [0.5.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;mass uv lock --upgrade (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21638&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21638/hovercard&quot;&gt;#21638&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-langfuse [0.5.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump the pip group across 55 directories with 3 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21435&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21435/hovercard&quot;&gt;#21435&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;mass uv lock --upgrade (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21638&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21638/hovercard&quot;&gt;#21638&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-literalai [1.4.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump the pip group across 55 directories with 3 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21435&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21435/hovercard&quot;&gt;#21435&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;mass uv lock --upgrade (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21638&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21638/hovercard&quot;&gt;#21638&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-openinference [0.5.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump the pip group across 55 directories with 3 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21435&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21435/hovercard&quot;&gt;#21435&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;mass uv lock --upgrade (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21638&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21638/hovercard&quot;&gt;#21638&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-opik [1.3.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump the pip group across 55 directories with 3 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21435&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21435/hovercard&quot;&gt;#21435&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;mass uv lock --upgrade (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21638&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21638/hovercard&quot;&gt;#21638&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-callbacks-promptlayer [0.5.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump the pip group across 55 directories with 3 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21435&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21435/hovercard&quot;&gt;#21435&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;mass uv lock --upgrade (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21638&quot; data-hovercard-type=&quot;pull_request&quot;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/560704231/v0.14.21</id>
+    <updated>2026-04-21T00:18:51Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/run-llama/llama_index/releases/tag/v0.14.21"/>
+    <title>v0.14.21</title>
+    <content type="html">&lt;h1&gt;Release Notes&lt;/h1&gt;
+&lt;h2&gt;[2026-04-21]&lt;/h2&gt;
+&lt;h3&gt;llama-index-callbacks-honeyhive [0.5.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump the pip group across 87 directories with 2 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21382&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21382/hovercard&quot;&gt;#21382&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the pip group across 68 directories with 2 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21394&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21394/hovercard&quot;&gt;#21394&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-core [0.14.21]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;fix(core): prevent &lt;code&gt;KeyError&lt;/code&gt; in &lt;code&gt;DocumentSummaryIndex.delete_nodes&lt;/code&gt; when invalid node ID is provided (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21067&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21067/hovercard&quot;&gt;#21067&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix(core): handle &lt;code&gt;ValueError&lt;/code&gt; and &lt;code&gt;TypeError&lt;/code&gt; from structured output failures (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21090&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21090/hovercard&quot;&gt;#21090&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;fix: add explicit UTF-8 encoding to persistence layer fs.open() calls (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21111&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21111/hovercard&quot;&gt;#21111&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Fix Breaking Change in Message Block Buffer Resolution (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21339&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21339/hovercard&quot;&gt;#21339&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the pip group across 87 directories with 2 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21382&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21382/hovercard&quot;&gt;#21382&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the pip group across 68 directories with 2 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21394&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21394/hovercard&quot;&gt;#21394&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-embeddings-huggingface-optimum [0.4.1]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump the pip group across 96 directories with 2 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21381&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21381/hovercard&quot;&gt;#21381&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-embeddings-nvidia [0.5.1]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;feat(embeddings-nvidia): add http client support (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21046&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21046/hovercard&quot;&gt;#21046&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-embeddings-oracleai [0.4.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump the pip group across 96 directories with 2 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21381&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21381/hovercard&quot;&gt;#21381&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-embeddings-premai [0.5.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump the pip group across 96 directories with 2 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21381&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21381/hovercard&quot;&gt;#21381&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the pip group across 87 directories with 2 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21382&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21382/hovercard&quot;&gt;#21382&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump the pip group across 68 directories with 2 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21394&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21394/hovercard&quot;&gt;#21394&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-embeddings-text-embeddings-inference [0.5.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump the pip group across 96 directories with 2 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21381&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21381/hovercard&quot;&gt;#21381&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-embeddings-textembed [0.4.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump the pip group across 96 directories with 2 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21381&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/run-llama/llama_index/pull/21381/hovercard&quot;&gt;#21381&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;llama-index-embeddings-together [0.5.0]&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump the pip group across 96 directories with 2 updates (&lt;a href=&quot;https://github.com/run-llama/llama_index/pull/21381&quot;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+</feed>

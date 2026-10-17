@@ -1,0 +1,172 @@
+# Topic slugs are fixed (spec section 13 prompts reference them). Keywords may be extended.
+# Matching rule for Phase 1: case-insensitive WHOLE-TOKEN/phrase matching only (never substring):
+# "edge" must not match "knowledge", "rag" must not match "storage".
+# Duplicates across topics are errors unless listed under shared_keywords in each topic.
+topics:
+  llm-releases:
+    description: New or updated frontier and general-purpose model releases
+    keywords: ["model release", "now available", "introducing", "new model", "system card", "model card", "api update"]
+  open-source-llms:
+    description: Open-weight and open-source model releases and tooling
+    keywords: ["open-source", "open weights", "open-weight", "apache 2.0", "mit license", "hugging face hub", "weights released", "open model", "permissive license"]
+  small-local-models:
+    description: Small models and local / on-device inference
+    keywords: ["quantization", "gguf", "llama.cpp", "ollama", "on-device", "local inference", "edge", "mlx", "lm studio", "small language model", "int4"]
+  multimodal:
+    description: Vision, audio, video and image-generation models
+    keywords: ["multimodal", "vision-language", "text-to-image", "text-to-video", "speech", "audio model", "image generation", "video generation", "text-to-speech", "diffusion"]
+  agents-tooling:
+    description: Agent frameworks, tool use, orchestration, agent protocols
+    keywords: ["agent", "agents", "tool use", "function calling", "mcp", "a2a", "langgraph", "langchain", "crewai", "orchestration", "agentic", "multi-agent", "model context protocol", "computer use"]
+  rag:
+    description: Retrieval-augmented generation, vector search, embeddings
+    keywords: ["rag", "retrieval", "vector database", "embeddings", "reranker", "chunking", "knowledge base", "retrieval-augmented generation", "vector search", "reranking"]
+  fine-tuning-training:
+    description: Training, fine-tuning, alignment methods, distillation
+    keywords: ["fine-tuning", "finetuning", "lora", "qlora", "rlhf", "dpo", "grpo", "distillation", "pretraining", "post-training", "peft", "supervised fine-tuning", "instruction tuning", "model merging"]
+  research-papers:
+    description: Research papers and preprints
+    keywords: ["arxiv", "paper", "preprint", "we propose", "we introduce", "benchmark results", "ablation", "technical report"]
+  mlops-infra:
+    description: Serving, inference engines, deployment, observability
+    keywords: ["inference engine", "vllm", "tensorrt", "serving", "latency", "throughput", "deployment", "kubernetes", "observability", "inference server", "sglang", "kv cache", "speculative decoding"]
+  ai-hardware:
+    description: Chips, accelerators, compute and data-center news
+    keywords: ["gpu", "tpu", "accelerator", "h100", "b200", "nvidia", "amd instinct", "data center", "compute cluster", "tensor core", "hbm", "npu", "trainium"]
+  evals-benchmarks:
+    description: Evaluations, benchmarks, leaderboards
+    keywords: ["benchmark", "leaderboard", "eval", "evaluation", "mmlu", "swe-bench", "arena", "evals", "gpqa", "humaneval", "livebench"]
+  safety-alignment:
+    description: Safety, alignment, interpretability, red-teaming
+    keywords: ["alignment", "safety", "interpretability", "red team", "jailbreak", "guardrails", "responsible scaling", "prompt injection", "misalignment"]
+  ai-policy-regulation:
+    description: Laws, regulation, standards, governance
+    keywords: ["regulation", "ai act", "executive order", "policy", "export controls", "governance", "compliance", "standards", "legislation", "lawsuit", "nist"]
+  ai-products-apps:
+    description: AI-powered products, apps and developer tools
+    keywords: ["launch", "app", "copilot", "assistant", "coding assistant", "ide", "product update", "feature", "developer tools", "browser extension"]
+  datasets:
+    description: New datasets and data-related work
+    keywords: ["dataset", "corpus", "data release", "synthetic data", "annotation", "training data", "data curation", "open dataset"]
+  robotics:
+    description: Robotics and embodied AI
+    keywords: ["robot", "robotics", "embodied", "humanoid", "manipulation", "vla", "vision-language-action", "sim-to-real", "teleoperation"]
+
+# Entities: slug -> name + aliases (A.4). ambiguous_aliases = common words/names; see EntityDef.
+entities:
+  openai:
+    name: OpenAI
+    aliases: ["ChatGPT", "GPT-4", "GPT-5"]
+    ambiguous_aliases: ["GPT"]
+  anthropic:
+    name: Anthropic
+    aliases: ["Claude Code", "Claude Opus", "Claude Sonnet", "Claude Haiku"]
+    ambiguous_aliases: ["Claude"]
+    notes: "Claude is also a given name."
+  google-deepmind:
+    name: Google DeepMind
+    aliases: ["DeepMind", "Google AI", "Gemma"]
+    ambiguous_aliases: ["Gemini", "Google"]
+    notes: "Gemini is also a crypto exchange and a zodiac sign; Google is far too broad."
+  meta-ai:
+    name: Meta AI
+    aliases: ["Facebook AI Research", "Llama 3", "Llama 4"]
+    ambiguous_aliases: ["Meta", "Llama", "FAIR"]
+    notes: "Bare Llama also collides with llama.cpp and the animal; Meta with 'meta-analysis'."
+  mistral:
+    name: Mistral
+    aliases: ["Mistral AI", "Mixtral", "Codestral"]
+    ambiguous_aliases: ["Le Chat"]
+    notes: "Mistral is also a wind."
+  deepseek:
+    name: DeepSeek
+    aliases: ["DeepSeek AI", "DeepSeek-V3", "DeepSeek-R1"]
+  qwen:
+    name: Qwen
+    aliases: ["Alibaba Qwen", "Qwen2", "Qwen3"]
+    ambiguous_aliases: ["QwQ"]
+  hugging-face:
+    name: Hugging Face
+    aliases: ["HuggingFace", "Hugging Face Hub", "HF Hub"]
+    ambiguous_aliases: ["HF"]
+    notes: "Overlaps the transformers entity ('Hugging Face Transformers'): prefer longest match."
+  nvidia:
+    name: NVIDIA
+    aliases: ["CUDA", "TensorRT"]
+    ambiguous_aliases: ["Blackwell", "Hopper", "NIM"]
+  microsoft:
+    name: Microsoft
+    aliases: ["Microsoft Research", "Azure OpenAI", "Phi-3", "Phi-4"]
+    ambiguous_aliases: ["Copilot", "Azure", "Phi"]
+  xai:
+    name: xAI
+    aliases: ["x.ai", "xAI Grok"]
+    ambiguous_aliases: ["Grok"]
+    notes: "XAI also abbreviates 'explainable AI'; match xAI case-sensitively."
+  cohere:
+    name: Cohere
+    aliases: ["Cohere AI", "Command R", "Aya"]
+    notes: "Cohere is also an English verb."
+  stability-ai:
+    name: Stability AI
+    aliases: ["StabilityAI", "Stable Diffusion"]
+  langchain:
+    name: LangChain
+    aliases: ["LangGraph", "LangSmith", "langchain-ai"]
+  llamaindex:
+    name: LlamaIndex
+    aliases: ["Llama Index", "llama_index", "run-llama"]
+  ollama:
+    name: Ollama
+    aliases: ["ollama/ollama", "ollama.com"]
+  vllm:
+    name: vLLM
+    aliases: ["vllm-project", "vllm-project/vllm"]
+  llama-cpp:
+    name: llama.cpp
+    aliases: ["llama-cpp", "ggml-org/llama.cpp", "ggerganov/llama.cpp", "GGML"]
+  pytorch:
+    name: PyTorch
+    aliases: ["pytorch/pytorch", "PyTorch Foundation"]
+    ambiguous_aliases: ["torch"]
+  transformers:
+    name: Hugging Face Transformers
+    aliases: ["huggingface/transformers", "transformers library"]
+    ambiguous_aliases: ["transformers"]
+    notes: "Bare 'transformers' is also the architecture and a film franchise."
+  # --- proposed additions (review; delete any you do not want) ---
+  amd:
+    name: AMD
+    aliases: ["AMD Instinct", "ROCm"]
+    ambiguous_aliases: ["MI300"]
+  apple:
+    name: Apple
+    aliases: ["Apple Intelligence", "Apple MLX"]
+    ambiguous_aliases: ["MLX", "Siri"]
+    notes: "Bare 'Apple' omitted on purpose (fruit)."
+  perplexity:
+    name: Perplexity AI
+    aliases: ["Sonar"]
+    ambiguous_aliases: ["Perplexity"]
+    notes: "Perplexity is also an LM evaluation metric."
+  lmarena:
+    name: LMArena
+    aliases: ["Chatbot Arena", "LMSYS"]
+  sglang:
+    name: SGLang
+    aliases: ["sgl-project", "sgl-project/sglang"]
+  crewai:
+    name: CrewAI
+    aliases: ["crewAIInc", "crewAIInc/crewAI"]
+  allen-ai:
+    name: Allen Institute for AI
+    aliases: ["AI2", "OLMo", "Tulu"]
+    notes: "AI2 may collide with unrelated abbreviations."
+  moonshot-ai:
+    name: Moonshot AI
+    aliases: ["Kimi", "Kimi K2"]
+    ambiguous_aliases: ["Moonshot"]
+  zhipu-ai:
+    name: Zhipu AI
+    aliases: ["Z.ai", "ChatGLM"]
+    ambiguous_aliases: ["GLM"]

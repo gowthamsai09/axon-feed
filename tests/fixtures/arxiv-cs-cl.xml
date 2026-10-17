@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>cs.CL updates on arXiv.org</title>
+    <link>http://rss.arxiv.org/rss/cs.CL</link>
+    <description>cs.CL updates on the arXiv.org e-print archive.</description>
+    <atom:link href="http://rss.arxiv.org/rss/cs.CL" rel="self" type="application/rss+xml"/>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Oct 2026 04:00:05 +0000</lastBuildDate>
+    <managingEditor>redacted@example.invalid</managingEditor>
+    <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+    <skipDays>
+      <day>Saturday</day>
+      <day>Sunday</day>
+    </skipDays>
+    <item>
+      <title>DeepUnfolding_Agent: A Classical_Quantum Adaptive Control API</title>
+      <link>https://arxiv.org/abs/2610.20615</link>
+      <description>arXiv:2610.20615v1 Announce Type: new 
+Abstract: Adaptive optimization workflows in machine learning, federated learning, quantum machine learning, and hybrid classical quantum systems often embed controller logic directly inside task specific training scripts. This coupling limits reuse, reproducibility, safety validation, and fair comparison across execution environments. This paper presents DeepUnfolding Agent, a schema-driven FastAPI platform that exposes deep unfolded adaptive control as an external software service. External executors register a strategy schema, submit round-level diagnostic variables, receive schema-bounded control actions, execute one optimization round, and return feedback for controller update. The framework separates controller intelligence from domain specific execution through a strategy registry, diagnostic to state adapter, controller factory, safety guard, executor abstraction, feedback update path, SQLite persistence layer, Docker deployment, and reproducible benchmark scripts. The implementation supports classical, quantum-aware, hybrid, Qiskit Aer, and optional IBM quantum processing execution pathways. We validate the software through unit, schema, API, safety, orchestration, Quantum execution, checkpointing, and Docker tests, and demonstrate external user fixed versus adaptive workflows across finance, healthcare, genomics, transport, noisy quantum simulation, and hardware backed IBM Quantum execution. The results show that DeepUnfolding-Agent provides a reusable and traceable adaptive control layer for heterogeneous optimization workflows. Our quantum experiments are interpreted as API level quantum control and hardware portability evidence.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2610.20615v1</guid>
+      <category>cs.CL</category>
+      <category>cs.LG</category>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Shanika Iroshi Nanayakkara, Shiva Raj Pokhrel</dc:creator>
+    </item>
+    <item>
+      <title>PRISM: PRIvileged Sibling-guided Multi-Agent Topology Design</title>
+      <link>https://arxiv.org/abs/2610.20628</link>
+      <description>arXiv:2610.20628v1 Announce Type: new 
+Abstract: Multi-agent systems (MAS) based on large language models (LLMs) have become a powerful way to address complex problems, and their effectiveness depends critically on the collaboration topology that decides which agents participate and how they communicate. Recent work learns to generate this topology from the task query, fitting the generator to corpora of execution-verified graphs. The post-training method for such generators remains a limitation: a corpus lists the graphs that solved a query but never ranks them, leaving continued supervised fine-tuning (SFT) with no per-query preference to exploit. Without such a preference, the generator drifts toward the topologies the corpus contains most often rather than those that suit each query, so a gain on one task can come at a cost on another. We propose PRISM, which recovers per-query signal from the same corpus by learning with privileged information: a teacher reads, through a zero-initialized low-rank branch, a sibling graph that also solved the query and is unavailable at deployment, and the student matches its per-decision targets on trajectories the student samples itself. Across six diverse benchmarks PRISM improves over every topology-design baseline evaluated, and matched-teacher controls support the contribution of privileged query information. Code is available in this link.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2610.20628v1</guid>
+      <category>cs.CL</category>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Phuong Tuan Dat, Qi Li, Xinchao Wang</dc:creator>
+    </item>
+    <item>
+      <title>A Large-Scale Dataset for Multi-Class Financial News Classification in Brazilian Portuguese</title>
+      <link>https://arxiv.org/abs/2610.20630</link>
+      <description>arXiv:2610.20630v1 Announce Type: new 
+Abstract: The development of Financial Natural Language Processing (NLP) systems for Brazilian Portuguese is hindered by the scarcity of domain-specific datasets. To address this, we present a large-scale corpus of approximately 160,000 Brazilian Portuguese financial news articles collected from web sources. To establish initial benchmarks for a weakly supervised multi-class classification approach based on semantic similarity, we annotated subsets of this corpus both manually and using a Large Language Model (LLM). We evaluated three similarity-based methods -- cosine similarity, K-Nearest Neighbors (KNN), and FAISS-based nearest-neighbor search -- using multilingual semantic embeddings. Our experiments reveal that the task is highly sensitive to label quality and class distribution. On the manually labeled subset, KNN achieved the best performance (47.3% accuracy, 31.9% F1-score), closely followed by FAISS. Conversely, on the LLM-annotated subset, while accuracy reached approximately 50%, F1-scores dropped to near 20%, highlighting the negative impact of label imbalance and noisy weak annotations. These findings establish foundational baselines for a challenging task, underscoring the critical need for high-quality manual annotations. Ultimately, this dataset and our preliminary results provide a reference point for future research in Brazilian Portuguese Financial NLP.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2610.20630v1</guid>
+      <category>cs.CL</category>
+      <category>cs.LG</category>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <dc:creator>Leomax Bandeira, Gabriel Aguiar, Dalton C\'ezane Gomes Valadares, Luiz Pereira, Helder Fernando de Ara\'ujo Oliveira, Gustavo Xavier, Andson M. Balieiro</dc:creator>
+    </item>
+    <item>
+      <title>Real-time Chatbot Romance Scam Detection in Stage Classification</title>
+      <link>https://arxiv.org/abs/2610.20631</link>
+      <description>arXiv:2610.20631v1 Announce Type: new 
+Abstract: Romance scam has become a serious problem via social media, and the improvement of artificial intelligence enable to fake identify easily. In the study, a chatbot has developed to detect romance scam in real-time through Line Messaging API. Using the seven stage theories in the social science field, the stages of romance scam can be detected through large language model. In addition, once a romance scam is detected, the chatbot provides explanations of the stage and prevention advices through large language model. The contribution of the work provides a practical application, and can be used in real scenario for reducing the risk of romance scam.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2610.20631v1</guid>
+      <category>cs.CL</category>
+      <category>cs.AI</category>
+      <category>cs.MM</category>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Yi-cheng Liu, Guan-ru Lai, Yi-cheng Lai, Lyn Chao-ling Chen</dc:creator>
+    </item>
+    <item>
+      <title>MeddeX: A Retrieval-Augmented LLaMA-3 System with Gemini Vision for Evidence-Backed Medical Report Analysis</title>
+      <link>https://arxiv.org/abs/2610.20632</link>
+      <description>arXiv:2610.20632v1 Announce Type: new 
+Abstract: Modern healthcare generates increasingly complex medical reports that challenge clinical professionals in terms of time and interpretive burden. Manual review processes are slow, error-prone, and difficult to scale. This paper presents MeddeX, a Medical Report Analyzer that combines a QLoRA fine-tuned LLaMA-3 (8B) model with Retrieval-Augmented Gen eration (RAG) and a multimodal Gemini Vision layer to deliver accurate, concise, and evidence-backed summaries of medical documents. The system handles text-native PDFs, scanned image based PDFs, and direct radiological images through an intelligent hybrid extraction pipeline that includes a novel garbage-text detection mechanism for corrupted and UTF-16-encoded doc uments. Beyond single-report Q&amp;A, MeddeX introduces report scoped retrieval for precise contextual grounding, an automated longitudinal report comparison engine, and a self-healing backfill pipeline that lazily processes legacy documents on demand. A FastAPI backend, Supabase vector store, and Next.js fron tend complete the end-to-end architecture. Evaluation against the base LLaMA3-Med42-8B model demonstrates consistent improvements across ROUGE-1 (+9.2%), ROUGE-2 (+10.0%), ROUGE-L (+11.8%), BLEU (+71.4%), and BERTScore (+0.8%), validating the benefit of domain-specific fine-tuning. MeddeX represents a practical and robust step toward AI-assisted clinical decision support.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2610.20632v1</guid>
+      <category>cs.CL</category>
+      <category>cs.CV</category>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/publicdomain/zero/1.0/</dc:rights>
+      <arxiv:journal_reference>IJSREM, International Journal of Scientific Research in Engineering and Management Volume 10 | 4| April 2026</arxiv:journal_reference>
+      <dc:creator>Rajdeep Pandhare, Rohit Kundaikar, Yakub Kojar, Shreyansh Tiwari</dc:creator>
+    </item>
+  </channel>
+</rss>

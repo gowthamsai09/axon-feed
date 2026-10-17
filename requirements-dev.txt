@@ -1,0 +1,8 @@
+mypy
+pytest
+ruff
+types-PyYAML
+types-defusedxml
+httpx
+defusedxml
+pyyaml

@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>cs.LG updates on arXiv.org</title>
+    <link>http://rss.arxiv.org/rss/cs.LG</link>
+    <description>cs.LG updates on the arXiv.org e-print archive.</description>
+    <atom:link href="http://rss.arxiv.org/rss/cs.LG" rel="self" type="application/rss+xml"/>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Oct 2026 04:00:04 +0000</lastBuildDate>
+    <managingEditor>redacted@example.invalid</managingEditor>
+    <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+    <skipDays>
+      <day>Saturday</day>
+      <day>Sunday</day>
+    </skipDays>
+    <item>
+      <title>FlowBudget: Training-Free Sampling-Budget Estimation for Flow Matching Models</title>
+      <link>https://arxiv.org/abs/2610.20636</link>
+      <description>arXiv:2610.20636v1 Announce Type: new 
+Abstract: Sampling from continuous flow-based generators such as flow matching models requires numerical ODE or SDE integration, making inference cost depend on the number of function evaluations (NFEs). In practice, the sampling budget is inherited from prior work or selected through expensive FID-versus-NFE sweeps, using FID to assess image-generation quality, requiring sample generation and evaluation at multiple budgets. This makes sampling-budget selection dependent on repeated empirical evaluation. We therefore ask a complementary question to solver design and timestep allocation: for a fixed pretrained model and solver, what numerical resolution is sufficient? We introduce FLOWBUDGET, a training-free estimator of solver-relative sampling complexity. Using simulation-free interpolation probes of the learned dynamics, FLOWBUDGET normalizes the leading one-step discretization error by the motion, estimates its coefficient from interpolation probes, and maps a numerical tolerance to a step budget using the solver order. We derive estimators for numerical solvers in flow~matching sampling, namely Euler and Heun for ODE sampling and additive-noise Euler--Maruyama for SDE sampling, and connect the ODE coefficients to terminal integration error. Experiments on SiT, FlowDCN and Rectified Flow models, spanning flow-model architectures and formulations, test whether FLOWBUDGET can estimate the NFE budget without generating samples at multiple budgets or performing an FID-versus-NFE sweep. The code is available at https://github.com/Yasaman-dt/FlowBudget</description>
+      <guid isPermaLink="false">oai:arXiv.org:2610.20636v1</guid>
+      <category>cs.LG</category>
+      <category>cs.CV</category>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Zahra Dehghani, Pablo Piantanida, Mohammadhadi Shateri</dc:creator>
+    </item>
+    <item>
+      <title>Expanding Attention: A Taylor-Series Route to Linear-Time Transformers with a Fixed Number of Recurrent States</title>
+      <link>https://arxiv.org/abs/2610.20637</link>
+      <description>arXiv:2610.20637v1 Announce Type: new 
+Abstract: We expand the exponential kernel of attention into a truncated Taylor series of $n$ terms and factorize each term into a tensor-power inner product, which collapses the causal history into exactly $n$ recurrent states, each updated by one rank-one outer product per token and independent of context length $N$. The recursion is lossless with respect to the truncated kernel ($2.2 \times 10^{-16}$ in float64), and the states are additive across chunks ($5.7 \times 10^{-14}$), so prefill admits a parallel scan. Measured exponents are $t \propto N^{2.28}$ for softmax against $N^{0.91}$ for states, with a crossover at $N \approx 728$ and $20.8\times$ at $N = 8192$; per-token decoding latency is constant at $7.3\,\mu$s against $N^{1.04}$ for softmax, giving $76.0\times$ at $N = 65536$. Accuracy improves exponentially in $n$ while cost grows combinatorially, since the $m$-th state is $\binom{d+m-1}{m}$ wide---a bound confirmed by SVD---so the optimum is second order, $n = 3$, at $6.5 \times 10^{-4}$ error and $9{,}945$ elements per head. Query and key normalization is a prerequisite: without it the argument exceeds the convergence radius and adding terms stops helping. </description>
+      <guid isPermaLink="false">oai:arXiv.org:2610.20637v1</guid>
+      <category>cs.LG</category>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Zicong Huang</dc:creator>
+    </item>
+    <item>
+      <title>Feature Elicitation for SAE Steering of Deceptive Behaviour in Small LLMs</title>
+      <link>https://arxiv.org/abs/2610.20638</link>
+      <description>arXiv:2610.20638v1 Announce Type: new 
+Abstract: Research on deceptive alignment is becoming increasingly urgent as frontier-model capabilities advance and their risk of causing catastrophic harm increases. Alignment faking is a form of deceptive alignment, with the compliance gap serving as a key behavioural indicator. This behaviour remains understudied in small LLMs and prior mechanistic interventions have not been shown to mitigate the compliance gap. We test whether steering SAE (sparse autoencoders) features associated with deontological ethics can mitigate this behaviour. We use a novel bag-of-words feature elicitation pipeline for SAE steering to identify what we construe as concept-level steering directions. Our approach reduced the compliance gap to non-significance in Gemma-3-27B-IT, whereas the tested configurations were not effective in LLaMA-3-8B-Instruct. Analysis of scratchpad traces also revealed deceptive model behaviour which we term deceptive defanging: deliberately degrading the aligned functionality of a response (in this case harmfulness) while preserving the appearance of alignment (in this case helpful compliance with the harmful request), sometimes conditioned on tier, training, or RLHF consequences. These findings provide, to our knowledge, the first evidence that a mechanistic activation-level intervention can mitigate the compliance gap in an alignment faking setup. They also identify a form of deceptive behaviour that may broaden our understanding of the different forms of deceptive behaviour in LLMs.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2610.20638v1</guid>
+      <category>cs.LG</category>
+      <category>cs.CY</category>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <dc:creator>J Koorndijk</dc:creator>
+    </item>
+    <item>
+      <title>Same Answer, New Box: How Much of RLVR's Out-of-Domain Gain Is Answer Format?</title>
+      <link>https://arxiv.org/abs/2610.20639</link>
+      <description>arXiv:2610.20639v1 Announce Type: new 
+Abstract: Reinforcement learning with verifiable rewards (RLVR) is credited with gains beyond the domain its rewards check, such as higher MMLU accuracy after training on mathematics. Such accuracies are usually read out of the model's text by an answer extractor. A model that learns to write its answer where the extractor looks can therefore score higher without answering better. We measure how much of the gain reported by extractors copied from public code arises this way. We generate outputs from a base model and its RL model and score them twice: with those extractors, and with one extractor of our own that reads a stated answer whether it is in the answer box \boxed{} or in the text. On four released 7B SimpleRL base-RL pairs, 82% of the out-of-domain multiple-choice gain that these extractors report disappears under ours: it is a gain in answer format, not in answers. The base models already state most of their answers in text, and RL moves them into the box, where these extractors look first. Independent LLM readers, in place of our extractor, put the figure at 77%. With a prompt that itself asks for the box, our extractor puts it at 79%. On a 32B pair trained with another recipe, almost none of the reported gain is format gain: its base model boxes its answers when asked, and its RL model rarely does when not. A reported gain is partly a property of the extractor that read it, and re-scoring stored outputs with a second extractor shows how much, without re-running RL.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2610.20639v1</guid>
+      <category>cs.LG</category>
+      <category>cs.CL</category>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Zongye Lyu</dc:creator>
+    </item>
+    <item>
+      <title>KNOU-Flood: Advancing global streamflow forecasting with lead-aware probabilistic machine learning</title>
+      <link>https://arxiv.org/abs/2610.20640</link>
+      <description>arXiv:2610.20640v1 Announce Type: new 
+Abstract: Global streamflow forecasting supports flood preparedness, yet data-driven models trained on reanalysis lose skill when driven by operational forecasts, increasingly so with lead time. AIFL addresses this shift with a two-stage transfer-learning recipe and a deterministic LSTM, but it feeds one forecast lead time into the whole input window and gives no uncertainty. We ask how far this open recipe can be extended without changing its recurrent core. KNOU-Flood keeps a single-layer LSTM and the two-stage training and changes the information around it: a longer input window (424 days), lead-aware forecast inputs, GraphCast as a second forecast source next to ECMWF HRES, and a latent-noise ensemble trained with the fair CRPS. We compare against a re-implementation of the AIFL recipe (its code is not public) under identical data, stations, splits and metrics. Our contributions are threefold. First, over three seeds and 2,099 test basins (2021-2023), KNOU-Flood reaches a median KGE' of 0.65 at LT1 and 0.48 at LT10 against 0.62 and 0.34, with significant gains at all ten lead times under two scoring protocols, also against a 1024-unit baseline and on held-out basins (one seed each). Second, identical weights give an LT10 KGE' of 0.18 or 0.34 depending on how forecasts are fed, so much of the lead-time decay reported for AIFL is an input-protocol effect; the probabilistic head contributes most to the gain, followed by the raw GraphCast channels, the longer window and mixed fine-tuning. Third, the ensembles reach lower CRPS than probabilistic versions of the baseline, are nearly calibrated with inference-time dropout, and detect 1.5- and 2-year floods better than all baselines; the benefit for rarer floods depends on the seed, and an exploratory tail-weighted variant improves 10-year and larger events. KNOU-Flood is a controlled extension of an open recipe, not a new architecture.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2610.20640v1</guid>
+      <category>cs.LG</category>
+      <category>physics.ao-ph</category>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>new</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
+      <dc:creator>Minjong Cheon</dc:creator>
+    </item>
+  </channel>
+</rss>

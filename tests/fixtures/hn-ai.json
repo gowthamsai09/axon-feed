@@ -1,0 +1,226 @@
+{
+  "exhaustive": {
+    "nbHits": false,
+    "typo": false
+  },
+  "exhaustiveNbHits": false,
+  "exhaustiveTypo": false,
+  "hits": [
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "dfps"
+        },
+        "story_text": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "llm"
+          ],
+          "value": "Everyone on here is quite familiar with the tech tool potential and the dystopian use trends. In some large part, these are social decisions. What laws do you want to see that <em>lim</em>it tech, and that allow tech?"
+        },
+        "title": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "Ask HN: What world do you want to live in?"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_dfps",
+        "story_50115908",
+        "ask_hn"
+      ],
+      "author": "dfps",
+      "created_at": "2026-10-16T08:59:00Z",
+      "created_at_i": 1792141140,
+      "num_comments": 0,
+      "objectID": "50115908",
+      "points": 1,
+      "story_id": 50115908,
+      "story_text": "Everyone on here is quite familiar with the tech tool potential and the dystopian use trends. In some large part, these are social decisions. What laws do you want to see that limit tech, and that allow tech?",
+      "title": "Ask HN: What world do you want to live in?",
+      "updated_at": "2026-10-16T09:01:27Z"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "blackcat201"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "llm"
+          ],
+          "value": "A 4B <em>LLM</em> learns to write tools that other <em>LLM</em>s can use"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "https://tool-use-smith.github.io/"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_blackcat201",
+        "story_50115527"
+      ],
+      "author": "blackcat201",
+      "created_at": "2026-10-16T08:05:22Z",
+      "created_at_i": 1792137922,
+      "num_comments": 0,
+      "objectID": "50115527",
+      "points": 1,
+      "story_id": 50115527,
+      "title": "A 4B LLM learns to write tools that other LLMs can use",
+      "updated_at": "2026-10-16T08:08:48Z",
+      "url": "https://tool-use-smith.github.io/"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "sedan_baklazhan"
+        },
+        "story_text": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "llm"
+          ],
+          "value": "The way things go now are obsiously flawed.<p>1. AI companies objective is to get rid of a very large part of jobs, thus converting a large part of consumers into jobless people - who are very bad at consuming.<p>2. They also take other people's and companie's content for free, turning them into own profits, thus removing any incentives to create such content in the future.<p>Proposed solution.<p>1. All data models are created anew.<p>2. All of the model content should be marked and paid for to its creators in a proportional amount to each specific training data usage.<p>3. No payment = no use in the model, unless a creator provides a free license to <em>LLM</em>'s.<p>4. Any commercial data needs an explicit permission to be used in training.<p>5. Profits made on data with no explicit owner (say, Shakespeare) are to be paid off to the respective country.<p>6. This policy is enforced worldwide.<p>When implemented, this policy will ensure that:<p>a. Many people whose jobs suffer remain part of the AI economy or can become parts of it;<p>b. Open-source software, photographers, artists, etc. will receive their rightful share of AI profits;<p>c. People will have a very good incentive to keep on creating."
+        },
+        "title": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "AI as a part of capitalism – the right way to go"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_sedan_baklazhan",
+        "story_50115335",
+        "ask_hn"
+      ],
+      "author": "sedan_baklazhan",
+      "created_at": "2026-10-16T07:38:27Z",
+      "created_at_i": 1792136307,
+      "num_comments": 0,
+      "objectID": "50115335",
+      "points": 2,
+      "story_id": 50115335,
+      "story_text": "The way things go now are obsiously flawed.<p>1. AI companies objective is to get rid of a very large part of jobs, thus converting a large part of consumers into jobless people - who are very bad at consuming.<p>2. They also take other people&#x27;s and companie&#x27;s content for free, turning them into own profits, thus removing any incentives to create such content in the future.<p>Proposed solution.<p>1. All data models are created anew.<p>2. All of the model content should be marked and paid for to its creators in a proportional amount to each specific training data usage.<p>3. No payment = no use in the model, unless a creator provides a free license to LLM&#x27;s.<p>4. Any commercial data needs an explicit permission to be used in training.<p>5. Profits made on data with no explicit owner (say, Shakespeare) are to be paid off to the respective country.<p>6. This policy is enforced worldwide.<p>When implemented, this policy will ensure that:<p>a. Many people whose jobs suffer remain part of the AI economy or can become parts of it;<p>b. Open-source software, photographers, artists, etc. will receive their rightful share of AI profits;<p>c. People will have a very good incentive to keep on creating.",
+      "title": "AI as a part of capitalism – the right way to go",
+      "updated_at": "2026-10-16T07:55:48Z"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "l0kihardt"
+        },
+        "title": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "WhatsApp vs. NSO Group: Technical Report"
+        },
+        "url": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "llm"
+          ],
+          "value": "https://www.courtlistener.com/docket/16395340/741/45/whatsapp-inc-v-nso-group-technologies-<em>lim</em>ited/"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_l0kihardt",
+        "story_50115024"
+      ],
+      "author": "l0kihardt",
+      "created_at": "2026-10-16T06:55:07Z",
+      "created_at_i": 1792133707,
+      "num_comments": 0,
+      "objectID": "50115024",
+      "points": 2,
+      "story_id": 50115024,
+      "title": "WhatsApp vs. NSO Group: Technical Report",
+      "updated_at": "2026-10-16T06:58:18Z",
+      "url": "https://www.courtlistener.com/docket/16395340/741/45/whatsapp-inc-v-nso-group-technologies-limited/"
+    },
+    {
+      "_highlightResult": {
+        "author": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "dash0r"
+        },
+        "title": {
+          "fullyHighlighted": false,
+          "matchLevel": "full",
+          "matchedWords": [
+            "llm"
+          ],
+          "value": "Sift – Analyse every file with local <em>LLM</em>s"
+        },
+        "url": {
+          "matchLevel": "none",
+          "matchedWords": [],
+          "value": "https://github.com/c0decave/sift"
+        }
+      },
+      "_tags": [
+        "story",
+        "author_dash0r",
+        "story_50114848"
+      ],
+      "author": "dash0r",
+      "children": [
+        50114849
+      ],
+      "created_at": "2026-10-16T06:29:13Z",
+      "created_at_i": 1792132153,
+      "num_comments": 0,
+      "objectID": "50114848",
+      "points": 2,
+      "story_id": 50114848,
+      "title": "Sift – Analyse every file with local LLMs",
+      "updated_at": "2026-10-16T06:40:18Z",
+      "url": "https://github.com/c0decave/sift"
+    }
+  ],
+  "hitsPerPage": 20,
+  "nbHits": 59281,
+  "nbPages": 50,
+  "page": 0,
+  "params": "query=LLM&tags=story&hitsPerPage=20&advancedSyntax=true&analyticsTags=backend",
+  "processingTimeMS": 32,
+  "processingTimingsMS": {
+    "_request": {
+      "queue": 11,
+      "roundTrip": 16
+    },
+    "afterFetch": {
+      "format": {
+        "highlighting": 1,
+        "total": 1
+      }
+    },
+    "fetch": {
+      "query": 1,
+      "scanning": 29,
+      "total": 31
+    },
+    "total": 32
+  },
+  "query": "LLM",
+  "serverTimeMS": 45
+}

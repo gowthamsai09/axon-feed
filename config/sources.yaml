@@ -1,0 +1,95 @@
+# Every entry with verify: true must be probed with scripts/validate_sources.py before it is
+# trusted. Nothing here is confirmed working until the probe results are reported.
+sources:
+  - id: arxiv-cs-ai
+    type: rss
+    url: https://rss.arxiv.org/rss/cs.AI
+    authority: 0.60
+    default_tags: [research-papers]
+    rate_limit_per_min: 4
+    verify: true
+  - id: arxiv-cs-cl
+    type: rss
+    url: https://rss.arxiv.org/rss/cs.CL
+    authority: 0.60
+    default_tags: [research-papers]
+    rate_limit_per_min: 4
+    verify: true
+  - id: arxiv-cs-lg
+    type: rss
+    url: https://rss.arxiv.org/rss/cs.LG
+    authority: 0.55
+    default_tags: [research-papers]
+    rate_limit_per_min: 4
+    verify: true
+  - id: hf-blog
+    type: rss
+    url: https://huggingface.co/blog/feed.xml
+    authority: 0.80
+    default_tags: [open-source-llms]
+    rate_limit_per_min: 6
+    verify: true
+  - id: hf-daily-papers
+    type: api
+    url: https://huggingface.co/api/daily_papers
+    authority: 0.75
+    default_tags: [research-papers]
+    rate_limit_per_min: 6
+    verify: true
+  - id: hn-ai
+    type: api
+    url: https://hn.algolia.com/api/v1/search_by_date?tags=story&query=LLM
+    authority: 0.55
+    default_tags: []
+    rate_limit_per_min: 10
+    verify: true
+  - id: openai-news
+    type: rss
+    url: https://openai.com/news/rss.xml
+    authority: 0.90
+    default_tags: [llm-releases, ai-products-apps]
+    rate_limit_per_min: 4
+    verify: true
+  - id: google-deepmind-blog
+    type: rss
+    url: https://deepmind.google/blog/rss.xml
+    authority: 0.90
+    default_tags: [llm-releases, research-papers]
+    rate_limit_per_min: 4
+    verify: true
+  - id: github-releases
+    type: github_releases
+    repos: ["ollama/ollama", "ggml-org/llama.cpp", "vllm-project/vllm", "langchain-ai/langchain", "run-llama/llama_index", "huggingface/transformers"]
+    url_template: https://github.com/{repo}/releases.atom
+    authority: 0.70
+    default_tags: [open-source-llms, mlops-infra]
+    rate_limit_per_min: 10
+    verify: true
+
+# Feeds unknown. Do NOT add guessed feed URLs. homepage is only a research starting point
+# (unverified hint, confirm in a browser). Discovery steps are in docs of the hub repo / README.
+needs_research:
+  - id: anthropic-news
+    name: Anthropic
+    homepage: https://www.anthropic.com/news
+    note: "Unverified homepage hint. Look for <link rel=alternate type=application/rss+xml>, then sitemap.xml, else Phase 1 polite scraper."
+  - id: meta-ai-blog
+    name: Meta AI
+    homepage: https://ai.meta.com/blog/
+    note: "Unverified homepage hint. Same discovery steps; may need the scraper."
+  - id: mistral-news
+    name: Mistral
+    homepage: https://mistral.ai/news
+    note: "Unverified homepage hint. Same discovery steps."
+  - id: qwen-blog
+    name: Qwen
+    note: "No homepage hint given. Also consider the project's GitHub releases and Hugging Face org instead of a blog."
+  - id: deepseek-news
+    name: DeepSeek
+    note: "No homepage hint given. Consider GitHub releases and Hugging Face org; a blog feed may not exist."
+  - id: reddit-localllama
+    name: "Reddit r/LocalLLaMA"
+    note: "Removed: robots.txt disallowed our User-Agent (probe 2026-10-16). Do not scrape. Revisit only via the official API under Reddit's terms (spec 5.1, Appendix B #15)."
+  - id: reddit-machinelearning
+    name: "Reddit r/MachineLearning"
+    note: "Removed: robots.txt disallowed our User-Agent (probe 2026-10-16). Do not scrape. Revisit only via the official API under Reddit's terms (spec 5.1, Appendix B #15)."

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:https://github.com/vllm-project/vllm/releases</id>
+  <link type="text/html" rel="alternate" href="https://github.com/vllm-project/vllm/releases"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/vllm-project/vllm/releases.atom"/>
+  <title>Release notes from vllm</title>
+  <updated>2026-10-15T09:50:46Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Repository/599547518/v0.32.0rc2</id>
+    <updated>2026-10-15T09:50:46Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/vllm-project/vllm/releases/tag/v0.32.0rc2"/>
+    <title>v0.32.0rc2</title>
+    <content type="html">&lt;p&gt;[CI] Pin DeepSeek-V4.1-Flash-NVFP4 eval to its FP8-Engram revision (#…&lt;/p&gt;</content>
+    <author>
+      <name>khluu</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/51931015?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/599547518/v0.32.0rc1</id>
+    <updated>2026-10-14T23:29:34Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/vllm-project/vllm/releases/tag/v0.32.0rc1"/>
+    <title>v0.32.0rc1: [Dependency] Update Humming and remove NVFP4 scale workaround (#61556)</title>
+    <content type="html">&lt;p&gt;Signed-off-by: jinzhen.ljz &lt;a href=&quot;mailto:redacted@example.invalid&quot;&gt;redacted@example.invalid&lt;/a&gt;&lt;br&gt;
+Co-authored-by: Codex &lt;a href=&quot;mailto:redacted@example.invalid&quot;&gt;redacted@example.invalid&lt;/a&gt;&lt;br&gt;
+Co-authored-by: Misha Goin &lt;a href=&quot;mailto:redacted@example.invalid&quot;&gt;redacted@example.invalid&lt;/a&gt;&lt;br&gt;
+Co-authored-by: Kevin H. Luu &lt;a href=&quot;mailto:redacted@example.invalid&quot;&gt;redacted@example.invalid&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>jinzhen-lin</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/14980050?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/599547518/proto-v0.6.0</id>
+    <updated>2026-10-14T23:57:02Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/vllm-project/vllm/releases/tag/proto-v0.6.0"/>
+    <title>proto-v0.6.0</title>
+    <content type="html">&lt;p&gt;vllm-proto 0.6.0&lt;/p&gt;</content>
+    <author>
+      <name>njhill</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/16958488?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/599547518/v0.32.0rc0</id>
+    <updated>2026-10-12T20:49:49Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/vllm-project/vllm/releases/tag/v0.32.0rc0"/>
+    <title>v0.32.0rc0: [HiSparse] Report host pool in KV cache capacity logs (#60285)</title>
+    <content type="html">&lt;p&gt;Signed-off-by: Matthew Bonanni &lt;a href=&quot;mailto:redacted@example.invalid&quot;&gt;redacted@example.invalid&lt;/a&gt;&lt;br&gt;
+Co-authored-by: Claude Opus 5.5 &lt;a href=&quot;mailto:redacted@example.invalid&quot;&gt;redacted@example.invalid&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>MatthewBonanni</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/22648877?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/599547518/proto-v0.5.0</id>
+    <updated>2026-10-09T03:11:40Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/vllm-project/vllm/releases/tag/proto-v0.5.0"/>
+    <title>proto-v0.5.0</title>
+    <content type="html">&lt;p&gt;Release vllm-proto 0.5.0&lt;/p&gt;</content>
+    <author>
+      <name>BugenZhao</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/25862682?s=60&amp;v=4"/>
+  </entry>
+</feed>

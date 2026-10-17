@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:https://github.com/huggingface/transformers/releases</id>
+  <link type="text/html" rel="alternate" href="https://github.com/huggingface/transformers/releases"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/huggingface/transformers/releases.atom"/>
+  <title>Release notes from transformers</title>
+  <updated>2026-10-15T17:55:40Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Repository/155220641/v5.20.0</id>
+    <updated>2026-10-15T18:05:36Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/huggingface/transformers/releases/tag/v5.20.0"/>
+    <title>Release v5.20.0</title>
+    <content type="html">&lt;h1&gt;Release v5.20.0&lt;/h1&gt;
+&lt;h2&gt;New Model additions&lt;/h2&gt;
+&lt;h3&gt;Muse Spark Open&lt;/h3&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/73884904/674958908-bf34ea27-0edf-4ded-ba6f-905b04096126.png?jwt=REDACTED&quot;&gt;&lt;img width=&quot;2000&quot; height=&quot;1080&quot; alt=&quot;image&quot; src=&quot;https://private-user-images.githubusercontent.com/73884904/674958908-bf34ea27-0edf-4ded-ba6f-905b04096126.png?jwt=REDACTED&quot; content-type-secured-asset=&quot;image/png&quot; style=&quot;max-width: 100%; height: auto; max-height: 1080px;&quot;&gt;&lt;/a&gt;
+&lt;p&gt;Muse Spark Open is a multimodal mixture-of-experts model from Meta that takes text, images, audio, and video as input and generates text. It has 816B total parameters (42B active per token) and a context window of up to 1,048,576 tokens shared across modalities. It is trained for agentic coding tasks such as multi-file editing, debugging, and tool use. Checkpoints are available in BF16 and NVFP4 formats.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://huggingface.co/docs/transformers/main/en/model_doc/muse_spark&quot; rel=&quot;nofollow&quot;&gt;Documentation&lt;/a&gt; | &lt;a href=&quot;http://hf.co/blog/meta-muse-spark-open&quot; rel=&quot;nofollow&quot;&gt;Blog Post&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add Muse Spark Open (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5870734437&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/huggingface/transformers/issues/49644&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/49644/hovercard&quot; href=&quot;https://github.com/huggingface/transformers/pull/49644&quot;&gt;#49644&lt;/a&gt;) by &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/guarin/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/guarin&quot;&gt;@guarin&lt;/a&gt; in &lt;a href=&quot;https://github.com/huggingface/transformers/pull/49644&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/49644/hovercard&quot;&gt;#49644&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Ling 3.0&lt;/h3&gt;
+&lt;p&gt;Ling 3.0 Flash is a hybrid Mixture-of-Experts language model from InclusionAI. Its decoder groups five Kimi Delta Attention (KDA) layers with one Multi-head Latent Attention (MLA) layer. The MLA blocks use interleaved rotary embeddings and a head-wise output gate, and the feed-forward blocks combine routed and shared experts. It is natively supported in Transformers as &lt;code&gt;BailingHybridForCausalLM&lt;/code&gt;, so it loads without &lt;code&gt;trust_remote_code=True&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://huggingface.co/docs/transformers/main/en/model_doc/bailing_hybrid&quot; rel=&quot;nofollow&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[Model] Add native Ling 3.0 Flash support (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5772220508&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/huggingface/transformers/issues/49446&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/49446/hovercard&quot; href=&quot;https://github.com/huggingface/transformers/pull/49446&quot;&gt;#49446&lt;/a&gt;) by &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/icavan/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/icavan&quot;&gt;@icavan&lt;/a&gt; in &lt;a href=&quot;https://github.com/huggingface/transformers/pull/49446&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/49446/hovercard&quot;&gt;#49446&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Kolibri1&lt;/h3&gt;
+&lt;p&gt;Kolibri 1 is Aleph Alpha&#39;s mixture-of-experts reasoning model, focused on German and English. Each of its 50 layers routes every token to 6 of 384 experts using sigmoid routing, and adds one shared expert. Four sliding-window attention layers alternate with one full-attention layer, and RoPE is applied only in the sliding-window layers.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://huggingface.co/docs/transformers/main/en/model_doc/kolibri1&quot; rel=&quot;nofollow&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add Kolibri 1 (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5778636610&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/huggingface/transformers/issues/49463&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/49463/hovercard&quot; href=&quot;https://github.com/huggingface/transformers/pull/49463&quot;&gt;#49463&lt;/a&gt;) by &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/lucamotz/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/lucamotz&quot;&gt;@lucamotz&lt;/a&gt; in &lt;a href=&quot;https://github.com/huggingface/transformers/pull/49463&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/49463/hovercard&quot;&gt;#49463&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;MiniCPM-V</content>
+    <author>
+      <name>vasqu</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/73884904?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/155220641/v5.19.0</id>
+    <updated>2026-10-06T16:39:23Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/huggingface/transformers/releases/tag/v5.19.0"/>
+    <title>Release v5.19.0</title>
+    <content type="html">&lt;h1&gt;Release v5.19.0&lt;/h1&gt;
+&lt;h2&gt;New Model additions&lt;/h2&gt;
+&lt;h3&gt;EmbeddingGemma2&lt;/h3&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/73884904/666833754-84734e74-163d-4d12-b166-ffcf6749d563.png?jwt=REDACTED&quot;&gt;&lt;img width=&quot;2000&quot; height=&quot;1700&quot; alt=&quot;image&quot; src=&quot;https://private-user-images.githubusercontent.com/73884904/666833754-84734e74-163d-4d12-b166-ffcf6749d563.png?jwt=REDACTED&quot; content-type-secured-asset=&quot;image/png&quot; style=&quot;max-width: 100%; height: auto; max-height: 1700px;&quot;&gt;&lt;/a&gt;
+&lt;p&gt;EmbeddingGemma 2 is a multimodal embedding model from Google built on the Gemma 4 architecture. It encodes text, images, audio, and video, individually or combined in one input, into a shared 768-dimensional vector space for cross-modal retrieval, semantic similarity, clustering, and classification. It uses Matryoshka Representation Learning, so embeddings can be truncated to 512, 256, or 128 dimensions. It also offers configurable visual and video token budgets, and unused vision or audio towers can be disabled at load time to save memory.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://huggingface.co/docs/transformers/main/en/model_doc/embedding_gemma2&quot; rel=&quot;nofollow&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Smthn smthn (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5731273262&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/huggingface/transformers/issues/49364&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/49364/hovercard&quot; href=&quot;https://github.com/huggingface/transformers/pull/49364&quot;&gt;#49364&lt;/a&gt;) by &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/vasqu/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/vasqu&quot;&gt;@vasqu&lt;/a&gt; in &lt;a href=&quot;https://github.com/huggingface/transformers/pull/49364&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/49364/hovercard&quot;&gt;#49364&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Breaking changes&lt;/h2&gt;
+&lt;p&gt;All MoE models whose routers compute logits now return them when &lt;code&gt;output_router_logits=True&lt;/code&gt;, following the Qwen3-MoE pattern (a &lt;code&gt;router_logits&lt;/code&gt; recorder on the base model, &lt;code&gt;MoeModelOutputWithPast&lt;/code&gt; from the backbone, and a MoE causal LM output from the head), so code that relied on the previous outputs or their absence should read the router logits from these output classes.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🚨 Return router logits from every MoE model that computes them (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5495317954&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/huggingface/transformers/issues/48920&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/48920/hovercard&quot; href=&quot;https://github.com/huggingface/transformers/pull/48920&quot;&gt;#48920&lt;/a&gt;) by &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/qgallouedec/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/qgallouedec&quot;&gt;@qgallouedec&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;Owlv2ForObjectDetection.embed_image_query&lt;/code&gt; now selects the query box with the highest objectness score, as in the original OWLv2 notebook, instead of the OWL-ViT heuristic, so image-guided query embeddings and detections may differ from earlier releases.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🚨 Select the OWLv2 image query by objectness (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5640150994&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/huggingface/transformers/issues/49200&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/49200/hovercard&quot; href=&quot;https://github.com/huggingface/transformers/pull/49200&quot;&gt;#49200&lt;/a&gt;) by &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/qgallouedec/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/qgallouedec&quot;&gt;@qgallouedec&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;code&gt;&quot;paged|&quot;&lt;/code&gt; prefix for SDPA and flash attention implementations is deprecated, so users should set the regular attention implementation (e.g. &lt;code&gt;sdpa&lt;/code&gt; or &lt;code&gt;flash_attention_2&lt;/code&gt;) for continuous batching instead of &lt;code&gt;paged|sdpa&lt;/code&gt; or &lt;code&gt;paged|flash_attention_2&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🚨 Attention 🚨 Deprecate &quot;paged|&quot; prefix for SDPA and flash  (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5583932451&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/huggingface/transformers/issues/49112&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/49112/hovercard&quot;</content>
+    <author>
+      <name>vasqu</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/73884904?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/155220641/v5.18.0</id>
+    <updated>2026-09-30T16:46:27Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/huggingface/transformers/releases/tag/v5.18.0"/>
+    <title>Release 5.18.0</title>
+    <content type="html">&lt;h2&gt;New Model additions&lt;/h2&gt;
+&lt;h3&gt;Nemotron 3 Diarization&lt;/h3&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/73884904/662347324-fe735cb3-9e5b-43ad-8f60-9dec8425aec7.png?jwt=REDACTED&quot;&gt;&lt;img width=&quot;1680&quot; height=&quot;900&quot; alt=&quot;image&quot; src=&quot;https://private-user-images.githubusercontent.com/73884904/662347324-fe735cb3-9e5b-43ad-8f60-9dec8425aec7.png?jwt=REDACTED&quot; content-type-secured-asset=&quot;image/png&quot; style=&quot;max-width: 100%; height: auto; max-height: 900px;&quot;&gt;&lt;/a&gt;
+&lt;p&gt;Nemotron 3 Diarization is an open-weight streaming speaker diarization model designed to determine &quot;who spoke when&quot; in real-world audio. It supports both streaming and offline inference, handles up to eight speakers, and orders speaker outputs by each speaker&#39;s first arrival in the input audio.&lt;/p&gt;
+&lt;p&gt;The model uses the Arrival-Order Speaker Cache (AOSC) &lt;a href=&quot;https://huggingface.co/papers/2507.18446&quot; rel=&quot;nofollow&quot;&gt;1&lt;/a&gt; and FIFO queue introduced for Streaming Sortformer &lt;a href=&quot;https://huggingface.co/papers/2507.18446&quot; rel=&quot;nofollow&quot;&gt;1&lt;/a&gt;, &lt;a href=&quot;https://huggingface.co/papers/2409.06656&quot; rel=&quot;nofollow&quot;&gt;2&lt;/a&gt;. A single checkpoint supports configurable latency profiles, from an 80 ms input buffer to a 30.4 s offline-style buffer, and configurable output frame resolution in multiples of 10 ms. With chunked inference, the maximum audio duration is not limited.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://huggingface.co/docs/transformers/main/en/model_doc/nemotron3_diarization&quot; rel=&quot;nofollow&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add Nemotron3Diarization (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5555353577&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/huggingface/transformers/issues/49056&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/49056/hovercard&quot; href=&quot;https://github.com/huggingface/transformers/pull/49056&quot;&gt;#49056&lt;/a&gt;) by &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/eustlb/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/eustlb&quot;&gt;@eustlb&lt;/a&gt; in &lt;a href=&quot;https://github.com/huggingface/transformers/pull/49056&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/49056/hovercard&quot;&gt;#49056&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;NemotronH Omni&lt;/h3&gt;
+&lt;p&gt;NemotronH Omni is a multimodal reasoning model from NVIDIA that pairs the &lt;a href=&quot;https://huggingface.co/docs/transformers/main/en/model_doc/nemotron_h&quot; rel=&quot;nofollow&quot;&gt;NemotronH&lt;/a&gt; hybrid&lt;br&gt;
+Mamba-Transformer language model with a &lt;a href=&quot;https://huggingface.co/docs/transformers/main/en/model_doc/radio&quot; rel=&quot;nofollow&quot;&gt;RADIO&lt;/a&gt; vision encoder and an optional Parakeet-based sound encoder.&lt;br&gt;
+Image (and video) patches are projected through a RADIO tower and a pixel-shuffle MLP into the language model&#39;s&lt;br&gt;
+embedding space at the &lt;code&gt;&amp;lt;image&amp;gt;&lt;/code&gt; / &lt;code&gt;&amp;lt;video&amp;gt;&lt;/code&gt; context-token positions; audio clips are projected in the same way at&lt;br&gt;
+&lt;code&gt;&amp;lt;audio&amp;gt;&lt;/code&gt; positions. The result is a single autoregressive model that reasons jointly over text, images, video and&lt;br&gt;
+sound.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://huggingface.co/docs/transformers/main/en/model_doc/nemotron_h_omni&quot; rel=&quot;nofollow&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add support for Nemotron Omni (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4616428476&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/huggingface/transformers/issues/46509&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/46509/hovercard&quot; href=&quot;https://github.com/huggingface/transformers/pull/46509&quot;&gt;#46509&lt;/a&gt;) by &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/meatybobby/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/meatybobby&quot;&gt;@meatybobby&lt;/a&gt; in &lt;a href=&quot;https://github.com/huggingface/transformers/pull/46509&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/46509/hovercard&quot;&gt;#46509&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;HyperCLOVAX Vision V2&lt;/h3&gt;
+&lt;p&gt;HyperCLOVAX Vision V2 is a multimodal vision-language model developed by NAVER. It combines the &lt;a href=&quot;https://huggingface.co/docs/transformers/main/en/model_doc/hyperclovax&quot; rel=&quot;nofollow&quot;&gt;HyperClovaX&lt;/a&gt; language model backbone with a &lt;a href=&quot;https://huggingface.co/docs/transformers/main/en/model_doc/qwen2_5_vl&quot; rel=&quot;nofollow&quot;&gt;Qwen2.5-VL&lt;/a&gt; vision encoder. The model supports text, image, and video inputs and is capable of chain-of-thought reasoning via built-in thinking tokens (&lt;code&gt;&amp;lt;think&amp;gt;...&amp;lt;/think&amp;gt;&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt;</content>
+    <author>
+      <name>vasqu</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/73884904?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/155220641/v5.17.0</id>
+    <updated>2026-09-10T12:03:18Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/huggingface/transformers/releases/tag/v5.17.0"/>
+    <title>Release 5.17.0</title>
+    <content type="html">&lt;h1&gt;Release v5.17.0&lt;/h1&gt;
+&lt;h2&gt;New Model additions&lt;/h2&gt;
+&lt;h3&gt;HYV4&lt;/h3&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/73884904/648777072-e6ed85ee-eb1d-40eb-a0d4-c649f6337ca9.png?jwt=REDACTED&quot;&gt;&lt;img width=&quot;1503&quot; height=&quot;827&quot; alt=&quot;image&quot; src=&quot;https://private-user-images.githubusercontent.com/73884904/648777072-e6ed85ee-eb1d-40eb-a0d4-c649f6337ca9.png?jwt=REDACTED&quot; content-type-secured-asset=&quot;image/png&quot; style=&quot;max-width: 100%; height: auto; max-height: 827px;&quot;&gt;&lt;/a&gt;
+&lt;p&gt;Hy4-Preview is a 780B-parameter mixture-of-experts language model that activates 49B parameters per&lt;br&gt;
+token. Each MoE layer holds 256 routed experts plus one always-active shared expert and routes every&lt;br&gt;
+token to 8 of them. The context window is 1M tokens.&lt;/p&gt;
+&lt;p&gt;The architecture combines four features:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Multi-head Latent Attention (MLA)&lt;/strong&gt; compresses keys and values into a low-rank latent&lt;br&gt;
+(&lt;code&gt;kv_lora_rank&lt;/code&gt;) that &lt;code&gt;kv_b_proj&lt;/code&gt; expands back to one key/value per query head.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DeepSeek Sparse Attention (DSA)&lt;/strong&gt; selects &lt;code&gt;index_topk&lt;/code&gt; keys per query with a lightweight indexer.&lt;br&gt;
+Following &lt;a href=&quot;https://huggingface.co/papers/2603.12201&quot; rel=&quot;nofollow&quot;&gt;IndexShare&lt;/a&gt;, only the layers marked &lt;code&gt;&quot;full&quot;&lt;/code&gt;&lt;br&gt;
+in &lt;code&gt;indexer_types&lt;/code&gt; run an indexer; &lt;code&gt;&quot;shared&quot;&lt;/code&gt; layers reuse the previous full layer&#39;s selection.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gated MLA with learnable attention sinks&lt;/strong&gt;, where each head owns a sink logit that participates&lt;br&gt;
+in the softmax and contributes no value, as in &lt;a href=&quot;/huggingface/transformers/blob/v5.17.0/gpt_oss&quot;&gt;GPT-OSS&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Independent Hyper-Connections (iHC)&lt;/strong&gt; replace the plain residual path with &lt;code&gt;hc_mult&lt;/code&gt; parallel&lt;br&gt;
+residual streams that are collapsed before, and redistributed after, every sublayer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The implementation does not execute the multi-token prediction (MTP) layers. Released checkpoints&lt;br&gt;
+keep those weights so that other runtimes can use them for speculative decoding; they are ignored&lt;br&gt;
+at load time.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://huggingface.co/docs/transformers/main/en/model_doc/hy_v4&quot; rel=&quot;nofollow&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add h4 (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5319755398&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/huggingface/transformers/issues/48473&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/48473/hovercard&quot; href=&quot;https://github.com/huggingface/transformers/pull/48473&quot;&gt;#48473&lt;/a&gt;) by &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/ArthurZucker/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/ArthurZucker&quot;&gt;@ArthurZucker&lt;/a&gt; in &lt;a href=&quot;https://github.com/huggingface/transformers/pull/48473&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/48473/hovercard&quot;&gt;#48473&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;VibeVoice&lt;/h3&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/73884904/648777689-29ccea01-a855-4d4f-a6af-61bc4fc883a4.png?jwt=REDACTED&quot;&gt;&lt;img width=&quot;2000&quot; height=&quot;1110&quot; alt=&quot;image&quot; src=&quot;https://private-user-images.githubusercontent.com/73884904/648777689-29ccea01-a855-4d4f-a6af-61bc4fc883a4.png?jwt=REDACTED&quot; content-type-secured-asset=&quot;image/png&quot; style=&quot;max-width: 100%; height: auto; max-height: 1110px;&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;a href=&quot;https://huggingface.co/papers/2508.19205&quot; rel=&quot;nofollow&quot;&gt;VibeVoice&lt;/a&gt; is a novel framework for synthesizing high-fidelity, long-form speech with multiple speakers by employing a next-token diffusion approach within a Large Language Model (LLM) structure. It&#39;s designed to capture the authentic conversational &quot;vibe&quot; and is particularly suited for generating audio content like podcasts and multi-participant audiobooks.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://huggingface.co/docs/transformers/main/en/model_doc/vibevoice&quot; rel=&quot;nofollow&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Implement VibeVoice  (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;3366773640&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/huggingface/transformers/issues/40546&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/40546/hovercard&quot; href=&quot;https://github.com/huggingface/transformers/pull/40546&quot;&gt;#40546&lt;/a&gt;) by &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/pengzhiliang/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot;</content>
+    <author>
+      <name>vasqu</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/73884904?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/155220641/v5.16.1</id>
+    <updated>2026-08-26T14:50:01Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/huggingface/transformers/releases/tag/v5.16.1"/>
+    <title>Release v5.16.1</title>
+    <content type="html">&lt;h1&gt;Release v5.16.1&lt;/h1&gt;
+&lt;p&gt;This is a special release as we include GLM! (and a few small fixes)&lt;/p&gt;
+&lt;h1&gt;GLM-5.3-Flash&lt;/h1&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/73884904/641638039-17bc9c29-758b-44c8-8230-42f945ded209.png?jwt=REDACTED&quot;&gt;&lt;img width=&quot;2000&quot; height=&quot;1247&quot; alt=&quot;image&quot; src=&quot;https://private-user-images.githubusercontent.com/73884904/641638039-17bc9c29-758b-44c8-8230-42f945ded209.png?jwt=REDACTED&quot; content-type-secured-asset=&quot;image/png&quot; style=&quot;max-width: 100%; height: auto; max-height: 1247px;&quot;&gt;&lt;/a&gt;
+&lt;p&gt;GLM-5.3-Flash, the first &lt;strong&gt;natively multimodal model&lt;/strong&gt; in the GLM-5 series. With 320B total parameters and just 18B active parameters, it outperforms GLM-5.2 across benchmarks and real-world workloads at one-tenth the price, while approaching Claude Opus 4.8 on coding and agentic benchmarks.&lt;/p&gt;
+&lt;p&gt;GLM-5.3-Flash starts from a newly trained base model, with its architecture and training recipe redesigned around capability and efficiency. For the first time in the GLM series, we introduce a hybrid architecture combining sparse and linear attention, sharply reducing long-context serving costs while preserving precise long-context capabilities. The model also adopts Manifold-Constrained Hyper-Connections (mHC) to further improve scaling efficiency. Together with our latest &lt;strong&gt;30T-token&lt;/strong&gt; multimodal pre-training corpus, these changes enable GLM-5.3-Flash to deliver more intelligence with less compute.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt; &lt;a href=&quot;https://huggingface.co/docs/transformers/main/en/model_doc/glm5_next&quot; rel=&quot;nofollow&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[Glm 5.3 Flash] GLM 5.3 Flash Support (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5257892093&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/huggingface/transformers/issues/48342&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/48342/hovercard&quot; href=&quot;https://github.com/huggingface/transformers/pull/48342&quot;&gt;#48342&lt;/a&gt;) by &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/Dovis01/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/Dovis01&quot;&gt;@Dovis01&lt;/a&gt; in &lt;a href=&quot;https://github.com/huggingface/transformers/pull/48342&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/48342/hovercard&quot;&gt;#48342&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Small patch fixes&lt;/h2&gt;
+&lt;p&gt;Mainly BC behavior for TP and pinning a hf kernel for security reasons 🤗&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Restore BC for the tensor-parallel API (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5247688388&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/huggingface/transformers/issues/48300&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/48300/hovercard&quot; href=&quot;https://github.com/huggingface/transformers/pull/48300&quot;&gt;#48300&lt;/a&gt;) by &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/ArthurZucker/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/ArthurZucker&quot;&gt;@ArthurZucker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fix kernel commit and repo paths for ESMFold2 (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5215379210&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/huggingface/transformers/issues/48186&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/huggingface/transformers/pull/48186/hovercard&quot; href=&quot;https://github.com/huggingface/transformers/pull/48186&quot;&gt;#48186&lt;/a&gt;) by &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/Rocketknight1/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/Rocketknight1&quot;&gt;@Rocketknight1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a class=&quot;commit-link&quot; href=&quot;https://github.com/huggingface/transformers/compare/v5.16.0...v5.16.1&quot;&gt;&lt;tt&gt;v5.16.0...v5.16.1&lt;/tt&gt;&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>vasqu</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/73884904?s=60&amp;v=4"/>
+  </entry>
+</feed>

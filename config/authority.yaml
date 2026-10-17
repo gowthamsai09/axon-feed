@@ -1,0 +1,37 @@
+# Authority is a prior in base_score (weight 0.25, spec 5.3). It says how much to trust a
+# source's own claims and curation, not how interesting an item is.
+version: 1
+tiers:
+  - id: primary
+    min_score: 0.85
+    max_score: 1.00
+    description: First-party announcements from the organization that built the thing (lab blogs, official release posts).
+    examples: [openai-news, google-deepmind-blog]
+  - id: platform
+    min_score: 0.70
+    max_score: 0.84
+    description: Major ecosystem hubs and project-maintained feeds. Reliable and first-party, but narrower or terser than a lab announcement.
+    examples: [hf-blog, hf-daily-papers, github-releases]
+  - id: curated-aggregate
+    min_score: 0.55
+    max_score: 0.69
+    description: High-volume channels with some quality signal (preprint category moderation, community voting) but no editorial vetting of claims.
+    examples: [arxiv-cs-ai, arxiv-cs-cl, arxiv-cs-lg, hn-ai]
+  - id: community
+    min_score: 0.35
+    max_score: 0.54
+    description: User-voted forums. Useful for early signal; claims are unverified and often second-hand. No active source today (Reddit is blocked by robots.txt).
+    examples: []
+  - id: unvetted
+    min_score: 0.00
+    max_score: 0.34
+    description: Not yet reviewed, or reviewed and found unreliable. Not used by default.
+    examples: []
+new_source_rule:
+  default: 0.50
+  cap_until_reviewed: 0.60
+  steps:
+    - "Classify the source into a tier: first-party => primary or platform; aggregator => curated-aggregate; forum => community."
+    - "Start at the tier midpoint, or 0.50 if unsure. Never exceed cap_until_reviewed (0.60) until 30 days of source health data exist in feed/meta.json."
+    - "Adjust by at most +/-0.05 for track record (accurate dates and links, few duplicates, low spam)."
+    - "Record the reason in the source's note field when the score is outside its tier midpoint."

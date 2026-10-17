@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:https://github.com/langchain-ai/langchain/releases</id>
+  <link type="text/html" rel="alternate" href="https://github.com/langchain-ai/langchain/releases"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/langchain-ai/langchain/releases.atom"/>
+  <title>Release notes from langchain</title>
+  <updated>2026-10-15T18:20:19Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Repository/552661142/langchain-core==1.6.11</id>
+    <updated>2026-10-15T18:32:37Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.6.11"/>
+    <title>langchain-core==1.6.11</title>
+    <content type="html">&lt;p&gt;Changes since langchain-core==1.6.10&lt;/p&gt;
+&lt;p&gt;release(core): 1.6.11 (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5871563420&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/langchain-ai/langchain/issues/41260&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/langchain-ai/langchain/pull/41260/hovercard&quot; href=&quot;https://github.com/langchain-ai/langchain/pull/41260&quot;&gt;#41260&lt;/a&gt;)&lt;br&gt;
+feat(core): accept address inside LangChainTracer (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5683899736&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/langchain-ai/langchain/issues/41006&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/langchain-ai/langchain/pull/41006/hovercard&quot; href=&quot;https://github.com/langchain-ai/langchain/pull/41006&quot;&gt;#41006&lt;/a&gt;)&lt;/p&gt;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/552661142/langchain-openai==1.7.2</id>
+    <updated>2026-10-14T13:51:18Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.7.2"/>
+    <title>langchain-openai==1.7.2</title>
+    <content type="html">&lt;p&gt;Changes since langchain-openai==1.7.1&lt;/p&gt;
+&lt;p&gt;release(openai): 1.7.2 (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5848794503&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/langchain-ai/langchain/issues/41245&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/langchain-ai/langchain/pull/41245/hovercard&quot; href=&quot;https://github.com/langchain-ai/langchain/pull/41245&quot;&gt;#41245&lt;/a&gt;)&lt;br&gt;
+fix(openai): keep Responses stream items on one block when output_index drifts (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5744848663&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/langchain-ai/langchain/issues/41121&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/langchain-ai/langchain/pull/41121/hovercard&quot; href=&quot;https://github.com/langchain-ai/langchain/pull/41121&quot;&gt;#41121&lt;/a&gt;)&lt;/p&gt;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/552661142/langchain==1.4.6</id>
+    <updated>2026-10-14T17:28:08Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.6"/>
+    <title>langchain==1.4.6</title>
+    <content type="html">&lt;p&gt;Changes since langchain==1.4.5&lt;/p&gt;
+&lt;p&gt;release(langchain): 1.4.6 (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5851991802&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/langchain-ai/langchain/issues/41247&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/langchain-ai/langchain/pull/41247/hovercard&quot; href=&quot;https://github.com/langchain-ai/langchain/pull/41247&quot;&gt;#41247&lt;/a&gt;)&lt;br&gt;
+feat(langchain): add opt-in per-call interrupts to HITL middleware (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5720528224&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/langchain-ai/langchain/issues/41062&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/langchain-ai/langchain/pull/41062/hovercard&quot; href=&quot;https://github.com/langchain-ai/langchain/pull/41062&quot;&gt;#41062&lt;/a&gt;)&lt;/p&gt;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/552661142/langchain-openai==1.7.1</id>
+    <updated>2026-10-12T14:33:11Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.7.1"/>
+    <title>langchain-openai==1.7.1</title>
+    <content type="html">&lt;p&gt;Changes since langchain-openai==1.7.0&lt;/p&gt;
+&lt;p&gt;release(openai): 1.7.1 (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5813511636&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/langchain-ai/langchain/issues/41222&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/langchain-ai/langchain/pull/41222/hovercard&quot; href=&quot;https://github.com/langchain-ai/langchain/pull/41222&quot;&gt;#41222&lt;/a&gt;)&lt;br&gt;
+feat(core,anthropic,openai): declare mid-conversation support in model profiles (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5780124652&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/langchain-ai/langchain/issues/41180&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/langchain-ai/langchain/pull/41180/hovercard&quot; href=&quot;https://github.com/langchain-ai/langchain/pull/41180&quot;&gt;#41180&lt;/a&gt;)&lt;/p&gt;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/552661142/langchain-core==1.6.10</id>
+    <updated>2026-10-12T14:14:05Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.6.10"/>
+    <title>langchain-core==1.6.10</title>
+    <content type="html">&lt;p&gt;Changes since langchain-core==1.6.9&lt;/p&gt;
+&lt;p&gt;release(core): 1.6.10 (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5813509761&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/langchain-ai/langchain/issues/41220&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/langchain-ai/langchain/pull/41220/hovercard&quot; href=&quot;https://github.com/langchain-ai/langchain/pull/41220&quot;&gt;#41220&lt;/a&gt;)&lt;br&gt;
+feat(core,anthropic,openai): declare mid-conversation support in model profiles (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5780124652&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/langchain-ai/langchain/issues/41180&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/langchain-ai/langchain/pull/41180/hovercard&quot; href=&quot;https://github.com/langchain-ai/langchain/pull/41180&quot;&gt;#41180&lt;/a&gt;)&lt;/p&gt;</content>
+    <author>
+      <name>github-actions[bot]</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/in/15368?s=60&amp;v=4"/>
+  </entry>
+</feed>

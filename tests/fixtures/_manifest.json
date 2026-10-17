@@ -1,0 +1,132 @@
+{
+  "captured_at": "2026-10-16T09:26:59.598741+00:00",
+  "items_kept": 5,
+  "files": [
+    {
+      "source": "arxiv-cs-ai",
+      "url": "https://rss.arxiv.org/rss/cs.AI",
+      "status": 200,
+      "file": "arxiv-cs-ai.xml",
+      "content_type": "application/rss+xml",
+      "final_url": "https://rss.arxiv.org/rss/cs.AI",
+      "etag": true
+    },
+    {
+      "source": "arxiv-cs-cl",
+      "url": "https://rss.arxiv.org/rss/cs.CL",
+      "status": 200,
+      "file": "arxiv-cs-cl.xml",
+      "content_type": "application/rss+xml",
+      "final_url": "https://rss.arxiv.org/rss/cs.CL",
+      "etag": true
+    },
+    {
+      "source": "arxiv-cs-lg",
+      "url": "https://rss.arxiv.org/rss/cs.LG",
+      "status": 200,
+      "file": "arxiv-cs-lg.xml",
+      "content_type": "application/rss+xml",
+      "final_url": "https://rss.arxiv.org/rss/cs.LG",
+      "etag": true
+    },
+    {
+      "source": "hf-blog",
+      "url": "https://huggingface.co/blog/feed.xml",
+      "status": 200,
+      "file": "hf-blog.xml",
+      "content_type": "application/rss+xml; charset=utf-8",
+      "final_url": "https://huggingface.co/blog/feed.xml",
+      "etag": true
+    },
+    {
+      "source": "hf-daily-papers",
+      "url": "https://huggingface.co/api/daily_papers",
+      "status": 200,
+      "file": "hf-daily-papers.json",
+      "content_type": "application/json; charset=utf-8",
+      "final_url": "https://huggingface.co/api/daily_papers",
+      "etag": true
+    },
+    {
+      "source": "hn-ai",
+      "url": "https://hn.algolia.com/api/v1/search_by_date?tags=story&query=LLM",
+      "status": 200,
+      "file": "hn-ai.json",
+      "content_type": "application/json",
+      "final_url": "https://hn.algolia.com/api/v1/search_by_date?tags=story&query=LLM",
+      "etag": false
+    },
+    {
+      "source": "openai-news",
+      "url": "https://openai.com/news/rss.xml",
+      "status": 200,
+      "file": "openai-news.xml",
+      "content_type": "text/xml; charset=utf-8",
+      "final_url": "https://openai.com/news/rss.xml",
+      "etag": false
+    },
+    {
+      "source": "google-deepmind-blog",
+      "url": "https://deepmind.google/blog/rss.xml",
+      "status": 200,
+      "file": "google-deepmind-blog.xml",
+      "content_type": "application/xml",
+      "final_url": "https://deepmind.google/blog/rss.xml",
+      "etag": true
+    },
+    {
+      "source": "github-releases[ollama/ollama]",
+      "url": "https://github.com/ollama/ollama/releases.atom",
+      "status": 200,
+      "file": "github-releases__ollama__ollama.xml",
+      "content_type": "application/atom+xml; charset=utf-8",
+      "final_url": "https://github.com/ollama/ollama/releases.atom",
+      "etag": true
+    },
+    {
+      "source": "github-releases[ggml-org/llama.cpp]",
+      "url": "https://github.com/ggml-org/llama.cpp/releases.atom",
+      "status": 200,
+      "file": "github-releases__ggml-org__llama.cpp.xml",
+      "content_type": "application/atom+xml; charset=utf-8",
+      "final_url": "https://github.com/ggml-org/llama.cpp/releases.atom",
+      "etag": true
+    },
+    {
+      "source": "github-releases[vllm-project/vllm]",
+      "url": "https://github.com/vllm-project/vllm/releases.atom",
+      "status": 200,
+      "file": "github-releases__vllm-project__vllm.xml",
+      "content_type": "application/atom+xml; charset=utf-8",
+      "final_url": "https://github.com/vllm-project/vllm/releases.atom",
+      "etag": true
+    },
+    {
+      "source": "github-releases[langchain-ai/langchain]",
+      "url": "https://github.com/langchain-ai/langchain/releases.atom",
+      "status": 200,
+      "file": "github-releases__langchain-ai__langchain.xml",
+      "content_type": "application/atom+xml; charset=utf-8",
+      "final_url": "https://github.com/langchain-ai/langchain/releases.atom",
+      "etag": true
+    },
+    {
+      "source": "github-releases[run-llama/llama_index]",
+      "url": "https://github.com/run-llama/llama_index/releases.atom",
+      "status": 200,
+      "file": "github-releases__run-llama__llama_index.xml",
+      "content_type": "application/atom+xml; charset=utf-8",
+      "final_url": "https://github.com/run-llama/llama_index/releases.atom",
+      "etag": true
+    },
+    {
+      "source": "github-releases[huggingface/transformers]",
+      "url": "https://github.com/huggingface/transformers/releases.atom",
+      "status": 200,
+      "file": "github-releases__huggingface__transformers.xml",
+      "content_type": "application/atom+xml; charset=utf-8",
+      "final_url": "https://github.com/huggingface/transformers/releases.atom",
+      "etag": true
+    }
+  ]
+}
