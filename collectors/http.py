@@ -6,7 +6,7 @@ from __future__ import annotations
 import ipaddress
 import socket
 import time
-from collections.abc import Callable
+from collections.abc import Callable, Mapping
 from urllib.parse import urlsplit
 from urllib.robotparser import RobotFileParser
 
@@ -16,6 +16,7 @@ import httpx
 PLACEHOLDER_CONTACT = "https://github.com/gowthamsai09/Axon"
 UA_TOKEN = "AxonFeedBot"
 MAX_BYTES = 5_000_000
+MAX_REDIRECT_HOPS = 5
 
 
 def user_agent(contact: str) -> str:
@@ -81,16 +82,24 @@ def make_client(
 
 
 class Throttle:
+    """One shared clock per host. `host_limits` (host -> requests per minute) is the strictest
+    limit declared by any configured source on that host; it caps every request to the host, from
+    any collector, the page extractor or the redirect resolver (per-domain rule, spec A.3)."""
+
     def __init__(
         self,
         clock: Callable[[], float] = time.monotonic,
         sleep: Callable[[float], None] | None = None,
+        host_limits: Mapping[str, float] | None = None,
     ) -> None:
         self._last: dict[str, float] = {}
         self._clock, self._sleep = clock, sleep
+        self._limits = {h.lower(): v for h, v in (host_limits or {}).items()}
 
     def wait(self, host: str, per_min: float) -> None:
-        gap = 60.0 / per_min
+        host = host.lower()
+        limit = self._limits.get(host)
+        gap = 60.0 / (per_min if limit is None else min(per_min, limit))
         last = self._last.get(host)
         if last is not None:
             remaining = gap - (self._clock() - last)
@@ -158,3 +167,35 @@ class Fetcher:
                 return bytes(body)
         except httpx.HTTPError as exc:
             raise FetchError(f"{type(exc).__name__}: {exc}"[:200]) from exc
+
+    def resolve(self, url: str, *, per_min: float) -> str:
+        """Final URL after following redirects hop by hop, never reading a body (spec 5.2 step 2).
+
+        Every hop goes through robots.txt, the throttle and the SSRF guard. If robots.txt forbids
+        fetching the FIRST url, nothing is learned (FetchError). If it forbids a later hop, that
+        hop's URL is already known from the Location header, so it is returned unfetched. A hop to
+        a non-public host, a loop or an unreachable server raises FetchError (caller keeps the
+        original URL)."""
+        current = url
+        for hop in range(MAX_REDIRECT_HOPS + 1):
+            allowed, note = self.robots.check(current)
+            if not allowed:
+                if hop == 0:
+                    raise FetchError(f"blocked by robots.txt{': ' + note if note else ''}")
+                return current
+            self.throttle.wait(urlsplit(current).netloc, per_min)
+            try:
+                with self.client.stream(
+                    "GET", current, headers={"Accept": "*/*"}, follow_redirects=False
+                ) as resp:
+                    location = resp.headers.get("location") if resp.is_redirect else None
+            except httpx.HTTPError as exc:
+                raise FetchError(f"{type(exc).__name__}: {exc}"[:200]) from exc
+            if not location:
+                return current
+            current = str(httpx.URL(current).join(location))
+            try:
+                assert_public_url(current, resolve=False)
+            except ValueError as exc:
+                raise FetchError(f"redirect to {exc}") from exc
+        raise FetchError(f"more than {MAX_REDIRECT_HOPS} redirects")

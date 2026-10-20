@@ -76,3 +76,55 @@ def test_longest_match_wins() -> None:
 @pytest.mark.parametrize("text", ["", "   ", "\n"])
 def test_empty_text(text: str) -> None:
     assert TAG.tag("", text).tags == [] and TAG.tag("", text).entities == []
+
+
+def test_ambiguous_names_need_a_safe_alias() -> None:
+    assert ents("Apple pie and other recipes") == []
+    assert ents("Build for macOS Apple Silicon (arm64)") == []
+    assert ents("Apple Intelligence gets a new model") == ["Apple"]
+    assert ents("Researchers cohere around a shared benchmark") == []
+    assert ents("Cohere releases Command R updates") == ["Cohere"]
+
+
+def test_local_llm_phrases_tag_small_local_models() -> None:
+    assert "small-local-models" in topics("Show HN: a speed test for any local LLM")
+    assert "small-local-models" in topics("Running local LLMs on a laptop")
+
+
+def test_entities_need_title_or_repeated_body_mentions() -> None:
+    tg = TAG
+    body_once = "We fine-tune Qwen3-8B on our data and compare with baselines."
+    assert tg.tag_entities("A new training recipe", body_once) == []
+    assert tg.tag_entities("A new training recipe", body_once + " Qwen3 helps most.") == ["Qwen"]
+    assert tg.tag_entities("Qwen3 released today", "nothing else") == ["Qwen"]
+    assert tg.tag_entities("Outlines", "Trusted by NVIDIA, Hugging Face, vLLM") == []
+
+
+def test_release_notes_match_entities_in_the_title_only() -> None:
+    body = "CUDA 12 NVIDIA drivers. CUDA 13 NVIDIA drivers. HIP builds for AMD, ROCm, AMD."
+    assert TAG.tag("ggml-org/llama.cpp b1", body).entities == ["llama.cpp", "NVIDIA", "AMD"]
+    result = TAG.tag("ggml-org/llama.cpp b1", body, entities_title_only=True)
+    assert result.entities == ["llama.cpp"]
+
+
+def test_more_keyword_forms() -> None:
+    assert "evals-benchmarks" in topics("A tool to compare LLM benchmarks")
+    assert "evals-benchmarks" in topics("Benchmarking how LLMs deal with fraudulent papers")
+    assert "small-local-models" in topics("Supply chains of quantized LLMs")
+    assert "small-local-models" in topics("Run 8B ternary LLMs on CPU")
+    assert "agents-tooling" in topics("Outlines: structured outputs for LLMs")
+
+
+def test_rl_policy_is_not_ai_policy() -> None:
+    rl = "Transferring RL-Induced Policy Shifts via On-Policy Distillation"
+    assert "ai-policy-regulation" not in topics(rl, "policy gradient and policy optimization")
+    assert "ai-policy-regulation" in topics("New AI policy proposals reach policymakers")
+
+
+def test_compatibility_adjectives_are_not_entity_mentions() -> None:
+    body = "A hosted OpenAI-compatible inference API. Any OpenAI compatible client works."
+    assert TAG.tag_entities("Refuseless: open models", body) == []
+    assert TAG.tag_entities("Self-hosted OpenAI-compatible gateway", "") == []
+    assert TAG.tag_entities("OpenAI releases a new model", body) == ["OpenAI"]
+    assert TAG.tag_entities("Gateway", "Routes to OpenAI and OpenAI-compatible servers") == []
+    assert TAG.tag_entities("Gateway", "Routes to OpenAI, Anthropic; OpenAI pricing") == ["OpenAI"]

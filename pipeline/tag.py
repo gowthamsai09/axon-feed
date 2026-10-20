@@ -12,6 +12,14 @@ from models.taxonomy import Taxonomy
 MIN_BODY_HITS = (
     2  # assumption, tune on real fixtures: 1 hit in the title OR 2 distinct hits overall
 )
+# An entity is tagged when it appears in the title, or at least this many times in the body, so a
+# paper that merely fine-tunes Qwen3 once or a "trusted by NVIDIA" line does not count (assumption).
+MIN_ENTITY_MENTIONS = 2
+# "OpenAI-compatible", "S3 API compatible": a name used as a compatibility adjective is not a
+# mention of that entity (real output: API gateways listing "OpenAI-compatible" twice).
+_COMPATIBLE = re.compile(
+    r"(?i)(?<![A-Za-z0-9])[A-Za-z0-9.]+(?:[- ](?:api|sdk))?[- ]compatible(?![A-Za-z0-9])"
+)
 MAX_TAGS = 6
 MAX_ENTITIES = 20
 _B_BEFORE, _B_AFTER = r"(?<![A-Za-z0-9])", r"(?![A-Za-z0-9])"
@@ -59,7 +67,10 @@ class Tagger:
             (
                 slug,
                 e.name,
-                [_compile(a, case_sensitive=len(a) <= 3) for a in [e.name, *e.aliases]],
+                [
+                    _compile(a, case_sensitive=len(a) <= 3)
+                    for a in ([] if e.name_ambiguous else [e.name]) + e.aliases
+                ],
             )
             for slug, e in taxonomy.entities.items()
         ]
@@ -79,18 +90,26 @@ class Tagger:
                 tags.append(d)
         return tags[:MAX_TAGS]
 
-    def tag_entities(self, title: str, text: str) -> list[str]:
-        return [name for _, name in self.match_entities(title, text)]
+    def tag_entities(self, title: str, text: str, *, title_only: bool = False) -> list[str]:
+        return [name for _, name in self.match_entities(title, text, title_only=title_only)]
 
-    def match_entities(self, title: str, text: str) -> list[tuple[str, str]]:
-        """Entities whose name or safe alias appears. Ambiguous aliases never qualify an entity on
-        their own (they only matter once Phase 2 ranking sees the entity). Longest match wins."""
+    def match_entities(
+        self, title: str, text: str, *, title_only: bool = False
+    ) -> list[tuple[str, str]]:
+        """Entities whose name or safe alias is in the title, or mentioned at least
+        MIN_ENTITY_MENTIONS times in the body. `title_only` (release notes, whose bodies are
+        build-matrix boilerplate) accepts title matches only. An ambiguous name
+        (`name_ambiguous`) does not count as a name. Ambiguous aliases never qualify an entity on
+        their own. Longest match wins."""
+        title, text = _COMPATIBLE.sub(" ", title), _COMPATIBLE.sub(" ", text)
         haystack = f"{title}\n{text}"
         spans: list[_Span] = []
         for slug, _name, patterns in self._entities:
             for p in patterns:
                 spans += [_Span(m.start(), m.end(), slug) for m in p.finditer(haystack)]
-        keep: dict[str, int] = {}
+        first: dict[str, int] = {}
+        mentions: dict[str, int] = {}
+        in_title: set[str] = set()
         for s in spans:
             covered = any(
                 o.slug != s.slug
@@ -99,16 +118,29 @@ class Tagger:
                 and (o.end - o.start) > (s.end - s.start)
                 for o in spans
             )
-            if not covered:
-                keep[s.slug] = min(keep.get(s.slug, s.start), s.start)
+            if covered:
+                continue
+            first[s.slug] = min(first.get(s.slug, s.start), s.start)
+            mentions[s.slug] = mentions.get(s.slug, 0) + 1
+            if s.end <= len(title):
+                in_title.add(s.slug)
         names = {slug: name for slug, name, _ in self._entities}
-        ordered = sorted(keep.items(), key=lambda kv: kv[1])
-        return [(s, names[s]) for s, _ in ordered][:MAX_ENTITIES]
+        ordered = sorted(first.items(), key=lambda kv: kv[1])
+        return [
+            (s, names[s])
+            for s, _ in ordered
+            if s in in_title or (not title_only and mentions[s] >= MIN_ENTITY_MENTIONS)
+        ][:MAX_ENTITIES]
 
     def tag(
-        self, title: str, text: str, default_tags: Sequence[TopicSlug] | None = None
+        self,
+        title: str,
+        text: str,
+        default_tags: Sequence[TopicSlug] | None = None,
+        *,
+        entities_title_only: bool = False,
     ) -> TagResult:
-        found = self.match_entities(title, text)
+        found = self.match_entities(title, text, title_only=entities_title_only)
         return TagResult(
             self.tag_topics(title, text, default_tags),
             [n for _, n in found],

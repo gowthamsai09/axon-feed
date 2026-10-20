@@ -114,13 +114,13 @@ def test_rerun_is_idempotent_and_prunes(tmp_path: Path, fast: None) -> None:
     snap = {
         str(p.relative_to(out)): p.read_bytes()
         for p in out.rglob("*")
-        if p.is_file() and p.name != "meta.json"
+        if p.is_file() and p.name not in {"meta.json", "store.json"}  # store: attempts may change
     }
     run_mod.main(["--out", str(out), "--now", "2026-10-16T12:00:00Z"])
     again = {
         str(p.relative_to(out)): p.read_bytes()
         for p in out.rglob("*")
-        if p.is_file() and p.name != "meta.json"
+        if p.is_file() and p.name not in {"meta.json", "store.json"}  # store: attempts may change
     }
     assert snap == again  # archive is not duplicated
     (out / "items" / "stale.json").write_text("{}")

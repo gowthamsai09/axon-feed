@@ -6,6 +6,8 @@ from __future__ import annotations
 
 import html as htmllib
 import re
+from collections.abc import Collection
+from urllib.parse import urlsplit
 
 import trafilatura
 
@@ -14,6 +16,21 @@ from collectors.http import Fetcher, FetchError
 from collectors.text import clean_text
 
 MIN_TEXT = 200  # feed text shorter than this triggers a page fetch
+# Video and social pages give footer boilerplate (in the viewer's language) instead of content.
+NO_EXTRACT_HOSTS = frozenset(
+    {
+        "youtube.com",
+        "youtu.be",
+        "vimeo.com",
+        "twitter.com",
+        "x.com",
+        "facebook.com",
+        "instagram.com",
+        "tiktok.com",
+        "linkedin.com",
+        "reddit.com",
+    }
+)
 _META = re.compile(
     r"(?is)<meta\s+[^>]*?(?:property|name)\s*=\s*[\"'](?:og:description|description)[\"'][^>]*?"
     r"content\s*=\s*[\"']([^\"']*)[\"']"
@@ -30,22 +47,43 @@ def extract_main_text(page: bytes) -> str:
     return clean_text(text, max_chars=TEXT_MAX, is_html=False)
 
 
+def skip_extraction(url: str) -> bool:
+    try:
+        host = (urlsplit(url).hostname or "").rstrip(".").lower()
+    except ValueError:
+        return False
+    return any(host == h or host.endswith("." + h) for h in NO_EXTRACT_HOSTS)
+
+
 def enrich(
     items: list[RawItem],
     fetcher: Fetcher,
     per_min: dict[str, float],
     *,
     max_fetches: int = 30,
+    skip: Collection[tuple[str, str]] = (),
+    attempted: set[tuple[str, str]] | None = None,
 ) -> tuple[list[RawItem], list[str]]:
-    """Fetch pages for thin items (at most max_fetches per run). Failures are warnings."""
+    """Fetch pages for thin items (at most max_fetches per run). Failures are warnings.
+    Items whose (source_id, url) is in `skip` (already tried enough in earlier runs) and items on
+    video/social hosts are left alone and do not count toward the cap. Each page fetch is
+    recorded in `attempted` when given."""
     out: list[RawItem] = []
     warnings: list[str] = []
     fetched = 0
     for item in items:
-        if len(item.text) >= MIN_TEXT or fetched >= max_fetches:
+        key = (item.source_id, item.url)
+        if (
+            len(item.text) >= MIN_TEXT
+            or key in skip
+            or skip_extraction(item.url)
+            or fetched >= max_fetches
+        ):
             out.append(item)
             continue
         fetched += 1
+        if attempted is not None:
+            attempted.add(key)
         try:
             page = fetcher.get(item.url, per_min=per_min.get(item.source_id, 6))
             text = extract_main_text(page)

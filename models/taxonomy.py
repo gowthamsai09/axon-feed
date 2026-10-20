@@ -27,6 +27,9 @@ class EntityDef(StrictModel):
     ambiguous_aliases: list[Annotated[str, Field(min_length=1, max_length=100)]] = Field(
         default_factory=list
     )
+    # True when the name itself is a common word ("Apple", "Cohere"): the bare name then never
+    # matches, and the entity qualifies only through a (safe) alias. Needs at least one alias.
+    name_ambiguous: bool = False
     notes: str | None = Field(None, max_length=300)
 
 

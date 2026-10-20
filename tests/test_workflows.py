@@ -62,7 +62,34 @@ def test_only_known_secrets_and_no_deploys(path: Path) -> None:
     assert not re.search(r"wrangler|npm publish|pages deploy", text)
 
 
-@pytest.mark.parametrize("path", [p for p in FILES if p.name != "ci.yml"], ids=lambda p: p.name)
-def test_stub_steps_carry_todo_markers(path: Path) -> None:
-    for s in steps(load(path)):
-        assert "TODO" in (s.get("name", "") + s.get("run", "")), s.get("name")
+def test_no_placeholders_or_todos_remain() -> None:
+    for path in FILES:
+        text = path.read_text()
+        assert "<pin-to-commit-sha>" not in text and "TODO" not in text, path.name
+
+
+def test_collect_workflow_matches_the_spec() -> None:
+    doc = load(WF / "collect.yml")
+    triggers: dict[str, Any] = doc.get(True) or doc["on"]
+    assert triggers["schedule"] == [{"cron": "7 */3 * * *"}] and "workflow_dispatch" in triggers
+    assert doc["permissions"] == {"contents": "write"}
+    assert doc["concurrency"] == {"group": "collect", "cancel-in-progress": False}
+    job = doc["jobs"]["collect"]
+    assert job["timeout-minutes"] <= 20
+    runs = [s.get("run", "") for s in job["steps"]]
+    prepare = next(i for i, r in enumerate(runs) if "publish_data prepare" in r)
+    collect = next(i for i, r in enumerate(runs) if "pipeline.run" in r)
+    push = next(i for i, r in enumerate(runs) if "publish_data push" in r)
+    assert prepare < collect < push  # previous state first, publish last
+    assert "--window-hours 168" in runs[collect] and "--out data/feed" in runs[collect]
+    checkout = next(s for s in job["steps"] if s.get("uses", "").startswith("actions/checkout"))
+    assert checkout["with"]["persist-credentials"] is False
+
+
+def test_token_only_reaches_the_git_steps() -> None:
+    steps_with_token = [
+        s["run"]
+        for s in steps(load(WF / "collect.yml"))
+        if "GITHUB_TOKEN" in json.dumps(s.get("env", {}))
+    ]
+    assert steps_with_token and all("publish_data" in r for r in steps_with_token)

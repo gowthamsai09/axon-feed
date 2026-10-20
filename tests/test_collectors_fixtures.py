@@ -211,3 +211,15 @@ def test_registry_maps_every_configured_source() -> None:
     )  # fmt: skip
     with pytest.raises(ValueError):
         collector_for(odd, window_hours=24)
+
+
+def test_hn_gate_needs_more_than_one_incidental_mention() -> None:
+    from collectors.hn import on_topic
+
+    assert on_topic("Show HN: a local LLM runner", "")  # title
+    assert on_topic("Faster inference tricks", "We tested LLMs. Also more LLM data.")  # 2 in text
+    assert on_topic("What is hard as AI makes coding easier?", "Since LLMs came, ...")  # AI title
+    assert not on_topic("Ask HN: Dark mode for HN please?", "As an LLM aside, light mode hurts.")
+    assert not on_topic("Reversing Wing Commander", "Not LLM generated, just patient work.")
+    assert not on_topic("A plea to help me help my father", "My LLM-free life ...")
+    assert not on_topic("Limits of limited things", "limit limited")

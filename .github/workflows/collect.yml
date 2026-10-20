@@ -1,10 +1,14 @@
-# STUB (Phase 1). Real workflow: spec 5.5. Dormant: manual trigger only, no schedule yet.
+# Spec 5.5. Collects every ~3 hours and publishes to the `data` branch, which GitHub Pages serves.
+# State between runs (store.json, archive/) lives on that branch. The git work is in
+# scripts/publish_data.py (tested against a local repository): first-run branch creation, commit,
+# weekly history squash. Nothing here runs a user's code; the token only pushes the data branch.
 name: collect
 on:
-  # TODO(Phase 1): enable  schedule: [{cron: "7 */3 * * *"}]  once collectors exist.
+  schedule:
+    - cron: "7 */3 * * *"   # every 3 hours, UTC; GitHub starts scheduled runs on a best-effort basis
   workflow_dispatch:
 permissions:
-  contents: read   # TODO(Phase 1): contents: write, pushing to the `data` branch only
+  contents: write   # pushes to the data branch only
 concurrency:
   group: collect
   cancel-in-progress: false
@@ -13,11 +17,26 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Checkout main and the data branch
-        run: echo "TODO(Phase 1) actions/checkout pinned to a SHA; second checkout with ref data"
-      - name: Set up Python 3.12 and install requirements
-        run: echo "TODO(Phase 1) actions/setup-python pinned to a SHA; pip install -r requirements.txt"
-      - name: Run the pipeline
-        run: echo "TODO(Phase 1) python -m pipeline.run --out data/feed --window-days 7"
-      - name: Commit feed to the data branch
-        run: echo "TODO(Phase 1) git add, commit, push origin data (spec 5.5)"
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6.1.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6.3.0
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements*.txt
+      - run: pip install -r requirements.txt
+      - name: Fetch the data branch (the first run starts it)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REMOTE: ${{ github.server_url }}/${{ github.repository }}.git
+        run: python -m scripts.publish_data prepare --data-dir data --remote "$REMOTE"
+      - name: Collect, process and write the feed
+        env:
+          CONTACT_URL: ${{ github.server_url }}/${{ github.repository }}
+        run: python -m pipeline.run --out data/feed --window-hours 168 --contact "$CONTACT_URL"
+      - name: Commit and push the data branch (squashes its history weekly)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REMOTE: ${{ github.server_url }}/${{ github.repository }}.git
+        run: python -m scripts.publish_data push --data-dir data --remote "$REMOTE"

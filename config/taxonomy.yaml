@@ -11,13 +11,13 @@ topics:
     keywords: ["open-source", "open weights", "open-weight", "apache 2.0", "mit license", "hugging face hub", "weights released", "open model", "permissive license"]
   small-local-models:
     description: Small models and local / on-device inference
-    keywords: ["quantization", "gguf", "llama.cpp", "ollama", "on-device", "local inference", "edge", "mlx", "lm studio", "small language model", "int4"]
+    keywords: ["quantization", "gguf", "llama.cpp", "ollama", "on-device", "local inference", "local llm", "local llms", "edge", "mlx", "lm studio", "small language model", "int4", "quantized", "cpu inference", "on cpu"]
   multimodal:
     description: Vision, audio, video and image-generation models
     keywords: ["multimodal", "vision-language", "text-to-image", "text-to-video", "speech", "audio model", "image generation", "video generation", "text-to-speech", "diffusion"]
   agents-tooling:
     description: Agent frameworks, tool use, orchestration, agent protocols
-    keywords: ["agent", "agents", "tool use", "function calling", "mcp", "a2a", "langgraph", "langchain", "crewai", "orchestration", "agentic", "multi-agent", "model context protocol", "computer use"]
+    keywords: ["agent", "agents", "tool use", "function calling", "mcp", "a2a", "langgraph", "langchain", "crewai", "orchestration", "agentic", "multi-agent", "model context protocol", "computer use", "structured output", "structured outputs"]
   rag:
     description: Retrieval-augmented generation, vector search, embeddings
     keywords: ["rag", "retrieval", "vector database", "embeddings", "reranker", "chunking", "knowledge base", "retrieval-augmented generation", "vector search", "reranking"]
@@ -35,13 +35,13 @@ topics:
     keywords: ["gpu", "tpu", "accelerator", "h100", "b200", "nvidia", "amd instinct", "data center", "compute cluster", "tensor core", "hbm", "npu", "trainium"]
   evals-benchmarks:
     description: Evaluations, benchmarks, leaderboards
-    keywords: ["benchmark", "leaderboard", "eval", "evaluation", "mmlu", "swe-bench", "arena", "evals", "gpqa", "humaneval", "livebench"]
+    keywords: ["benchmark", "leaderboard", "eval", "evaluation", "mmlu", "swe-bench", "arena", "evals", "gpqa", "humaneval", "livebench", "benchmarks", "benchmarking", "evaluations"]
   safety-alignment:
     description: Safety, alignment, interpretability, red-teaming
     keywords: ["alignment", "safety", "interpretability", "red team", "jailbreak", "guardrails", "responsible scaling", "prompt injection", "misalignment"]
   ai-policy-regulation:
     description: Laws, regulation, standards, governance
-    keywords: ["regulation", "ai act", "executive order", "policy", "export controls", "governance", "compliance", "standards", "legislation", "lawsuit", "nist"]
+    keywords: ["regulation", "ai act", "executive order", "ai policy", "public policy", "policymakers", "export controls", "governance", "compliance", "standards", "legislation", "lawsuit", "nist"]
   ai-products-apps:
     description: AI-powered products, apps and developer tools
     keywords: ["launch", "app", "copilot", "assistant", "coding assistant", "ide", "product update", "feature", "developer tools", "browser extension"]
@@ -106,7 +106,8 @@ entities:
   cohere:
     name: Cohere
     aliases: ["Cohere AI", "Command R", "Aya"]
-    notes: "Cohere is also an English verb."
+    name_ambiguous: true
+    notes: "Cohere is also an English verb; the bare word never matches."
   stability-ai:
     name: Stability AI
     aliases: ["StabilityAI", "Stable Diffusion"]
@@ -143,7 +144,8 @@ entities:
     name: Apple
     aliases: ["Apple Intelligence", "Apple MLX"]
     ambiguous_aliases: ["MLX", "Siri"]
-    notes: "Bare 'Apple' omitted on purpose (fruit)."
+    name_ambiguous: true
+    notes: "Bare 'Apple' never matches (fruit; also 'Apple Silicon' in build notes)."
   perplexity:
     name: Perplexity AI
     aliases: ["Sonar"]

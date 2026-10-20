@@ -1,6 +1,9 @@
 """Hacker News via the Algolia search API. Verified against a real capture (2026-10-16): the
 query 'LLM' is typo-tolerant and returns non-AI stories ('limit', 'limited' matched), so hits
-are gated on a whole-token LLM/LLMs in title or story text. Highlight fields are ignored.
+are gated (see `on_topic`): a whole-token LLM/LLMs in the title, or at least two in the story text,
+or one in the story text plus a clear AI term in the title. A single incidental "LLM" in the text
+of an unrelated post (dark mode requests, game reverse engineering) is not enough (real output,
+2026-10-20). Highlight fields are ignored.
 Ask HN posts have no url: the item URL is the HN discussion page. story_text is HTML.
 Unverified (Appendix B #13): the numericFilters/hitsPerPage/page parameters; the response echoes
 its `params`, which is checked at runtime and reported as a warning if a parameter was ignored."""
@@ -20,8 +23,19 @@ from models.sources import SourceEntry
 
 HN_ITEM = "https://news.ycombinator.com/item?id={id}"
 GATE = re.compile(r"(?i)(?<![A-Za-z0-9])LLMs?(?![A-Za-z0-9])")
+AI_TITLE = re.compile(
+    r"(?i)(?<![A-Za-z0-9])(?:A\.?I|GPT[-\w.]*|ChatGPT|OpenAI|Anthropic|Claude|Gemini|Copilot|agents?)"
+    r"(?![A-Za-z0-9])"
+)
 PAGE_SIZE = 100
 MAX_PAGES = 3
+
+
+def on_topic(title: str, story: str) -> bool:
+    if GATE.search(title):
+        return True
+    mentions = len(GATE.findall(story))
+    return mentions >= 2 or (mentions == 1 and AI_TITLE.search(title) is not None)
 
 
 def parse_hits(source: SourceEntry, body: bytes) -> tuple[Collected, int, str]:
@@ -40,7 +54,7 @@ def parse_hits(source: SourceEntry, body: bytes) -> tuple[Collected, int, str]:
             continue
         oid, title = str(h.get("objectID", "")), " ".join(str(h.get("title") or "").split())
         story = clean_text(str(h.get("story_text") or ""), max_chars=TEXT_MAX)
-        if not oid.isdigit() or not title or not (GATE.search(title) or GATE.search(story)):
+        if not oid.isdigit() or not title or not on_topic(title, story):
             continue
         try:
             out.items.append(
