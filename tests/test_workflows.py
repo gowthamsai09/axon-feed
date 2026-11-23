@@ -72,7 +72,7 @@ def test_collect_workflow_matches_the_spec() -> None:
     doc = load(WF / "collect.yml")
     triggers: dict[str, Any] = doc.get(True) or doc["on"]
     assert triggers["schedule"] == [{"cron": "7 */3 * * *"}] and "workflow_dispatch" in triggers
-    assert doc["permissions"] == {"contents": "write"}
+    assert doc["permissions"] == {"contents": "write", "issues": "write"}
     assert doc["concurrency"] == {"group": "collect", "cancel-in-progress": False}
     job = doc["jobs"]["collect"]
     assert job["timeout-minutes"] <= 20
@@ -92,4 +92,20 @@ def test_token_only_reaches_the_git_steps() -> None:
         for s in steps(load(WF / "collect.yml"))
         if "GITHUB_TOKEN" in json.dumps(s.get("env", {}))
     ]
-    assert steps_with_token and all("publish_data" in r for r in steps_with_token)
+    assert steps_with_token
+    assert all("publish_data" in r or "sync_issues" in r for r in steps_with_token)
+
+
+def test_issue_sync_is_isolated_from_the_scraper_and_never_fails_the_run() -> None:
+    job = load(WF / "collect.yml")["jobs"]["collect"]["steps"]
+    by_name = {s.get("name", ""): s for s in job}
+    sync = by_name["Open or close stale-source Issues"]
+    assert sync["continue-on-error"] is True
+    assert sync["env"] == {"GH_TOKEN": "${{ secrets.GITHUB_TOKEN }}"}
+    assert sync["run"] == "python -m scripts.sync_issues --meta data/feed/meta.json"
+    names = [s.get("name", "") for s in job]
+    assert names.index("Open or close stale-source Issues") > names.index(
+        "Commit and push the data branch (squashes its history weekly)"
+    )
+    pipeline = by_name["Collect, process and write the feed"]
+    assert "GH_TOKEN" not in json.dumps(pipeline.get("env", {}))  # the scraper never sees the token

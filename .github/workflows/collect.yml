@@ -9,6 +9,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write   # pushes to the data branch only
+  issues: write     # stale-source Issues (spec 11.1); the sync step is the only user
 concurrency:
   group: collect
   cancel-in-progress: false
@@ -40,3 +41,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REMOTE: ${{ github.server_url }}/${{ github.repository }}.git
         run: python -m scripts.publish_data push --data-dir data --remote "$REMOTE"
+      - name: Open or close stale-source Issues
+        continue-on-error: true   # a GitHub API problem must never fail the collection
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # only this step gets it, never the scraper's process
+        run: python -m scripts.sync_issues --meta data/feed/meta.json

@@ -8,6 +8,7 @@ sources:
     default_tags: [research-papers]
     rate_limit_per_min: 4
     verify: true
+    skip_weekends: true   # arXiv is empty on Saturday and Sunday (Appendix C 83)
   - id: arxiv-cs-cl
     type: rss
     url: https://rss.arxiv.org/rss/cs.CL
@@ -15,6 +16,7 @@ sources:
     default_tags: [research-papers]
     rate_limit_per_min: 4
     verify: true
+    skip_weekends: true   # arXiv is empty on Saturday and Sunday (Appendix C 83)
   - id: arxiv-cs-lg
     type: rss
     url: https://rss.arxiv.org/rss/cs.LG
@@ -22,6 +24,7 @@ sources:
     default_tags: [research-papers]
     rate_limit_per_min: 4
     verify: true
+    skip_weekends: true   # arXiv is empty on Saturday and Sunday (Appendix C 83)
   - id: hf-blog
     type: rss
     url: https://huggingface.co/blog/feed.xml

@@ -4,6 +4,7 @@ per-host throttle, size cap, public-hosts-only (also across redirects)."""
 from __future__ import annotations
 
 import ipaddress
+import re
 import socket
 import time
 from collections.abc import Callable, Mapping
@@ -27,13 +28,29 @@ class FetchError(Exception):
     """A fetch that should be logged and skipped, never fail the run (spec 5.2 step 1)."""
 
 
+# A host written as numbers that is not a canonical IP address (2130706433, 0x7f.1, 017700000001, 127.1,
+# fullwidth digits). Whatever a resolver would do with it, it is refused (Appendix C 84).
+_NUMERIC_HOST = re.compile(r"(?:0[xX][0-9a-fA-F]*|\d+)(?:\.(?:0[xX][0-9a-fA-F]*|\d+))*\.?")
+_HOST_CHARS = re.compile(r"[\w.-]+")  # letters, digits, dot, hyphen, underscore (also non-ASCII letters)
+
+
+def _is_public(ip: ipaddress.IPv4Address | ipaddress.IPv6Address) -> bool:
+    if isinstance(ip, ipaddress.IPv6Address) and ip.ipv4_mapped is not None:
+        ip = ip.ipv4_mapped  # ::ffff:10.0.0.1 is judged as 10.0.0.1
+    return ip.is_global and not ip.is_multicast
+
+
 def assert_public_url(url: str, *, resolve: bool = True) -> None:
     """Raise ValueError unless url is http(s) to a public host (no loopback/private/link-local)."""
     parts = urlsplit(url)
     if parts.scheme not in {"http", "https"} or not parts.hostname:
         raise ValueError(f"not an http(s) URL: {url!r}")
-    if parts.username or parts.password:
+    if "@" in parts.netloc or parts.username or parts.password:
         raise ValueError("credentials in URL")
+    try:
+        _ = parts.port  # raises ValueError for 99999, abc, -1
+    except ValueError:
+        raise ValueError("invalid port") from None
     host = parts.hostname.rstrip(".").lower()
     if host == "localhost" or host.endswith((".localhost", ".local", ".internal")):
         raise ValueError(f"non-public host: {host}")
@@ -42,6 +59,10 @@ def assert_public_url(url: str, *, resolve: bool = True) -> None:
         ipaddress.ip_address(host)
         candidates = [host]
     except ValueError:
+        if _NUMERIC_HOST.fullmatch(host):
+            raise ValueError("non-canonical IP address form") from None
+        if _HOST_CHARS.fullmatch(host) is None:
+            raise ValueError("invalid host name") from None
         if resolve:
             try:
                 candidates = [str(i[4][0]) for i in socket.getaddrinfo(host, None)]
@@ -52,7 +73,7 @@ def assert_public_url(url: str, *, resolve: bool = True) -> None:
                 candidates = []
     for c in candidates:
         ip = ipaddress.ip_address(c.split("%")[0])
-        if not ip.is_global:
+        if not _is_public(ip):
             raise ValueError(f"non-public address {ip} for {host}")
 
 
@@ -144,13 +165,26 @@ class Robots:
 class Fetcher:
     """What collectors and the extractor use to GET bytes."""
 
-    def __init__(self, client: httpx.Client, throttle: Throttle | None = None) -> None:
+    def __init__(
+        self,
+        client: httpx.Client,
+        throttle: Throttle | None = None,
+        *,
+        max_seconds: float = 60.0,
+        clock: Callable[[], float] = time.monotonic,
+    ) -> None:
         self.client = client
         self.robots = Robots(client)
         self.throttle = throttle or Throttle()
+        self._max_seconds = max_seconds
+        self._clock = clock
 
     def get(self, url: str, *, per_min: float, params: dict[str, str | int] | None = None) -> bytes:
-        full = str(httpx.URL(url).copy_merge_params(params or {}))
+        started = self._clock()
+        try:
+            full = str(httpx.URL(url).copy_merge_params(params or {}))
+        except httpx.InvalidURL:
+            raise FetchError("invalid URL") from None
         allowed, note = self.robots.check(full)
         if not allowed:
             raise FetchError(f"blocked by robots.txt{': ' + note if note else ''}")
@@ -164,8 +198,10 @@ class Fetcher:
                     body += chunk
                     if len(body) > MAX_BYTES:
                         raise FetchError("body over 5 MB")
+                    if self._clock() - started > self._max_seconds:
+                        raise FetchError("response too slow")
                 return bytes(body)
-        except httpx.HTTPError as exc:
+        except (httpx.HTTPError, httpx.InvalidURL) as exc:
             raise FetchError(f"{type(exc).__name__}: {exc}"[:200]) from exc
 
     def resolve(self, url: str, *, per_min: float) -> str:
@@ -177,7 +213,10 @@ class Fetcher:
         a non-public host, a loop or an unreachable server raises FetchError (caller keeps the
         original URL)."""
         current = url
+        started = self._clock()
         for hop in range(MAX_REDIRECT_HOPS + 1):
+            if self._clock() - started > self._max_seconds:
+                raise FetchError("redirect chain too slow")
             allowed, note = self.robots.check(current)
             if not allowed:
                 if hop == 0:
@@ -189,11 +228,14 @@ class Fetcher:
                     "GET", current, headers={"Accept": "*/*"}, follow_redirects=False
                 ) as resp:
                     location = resp.headers.get("location") if resp.is_redirect else None
-            except httpx.HTTPError as exc:
+            except (httpx.HTTPError, httpx.InvalidURL) as exc:
                 raise FetchError(f"{type(exc).__name__}: {exc}"[:200]) from exc
             if not location:
                 return current
-            current = str(httpx.URL(current).join(location))
+            try:
+                current = str(httpx.URL(current).join(location))
+            except httpx.InvalidURL:
+                raise FetchError("invalid redirect location") from None
             try:
                 assert_public_url(current, resolve=False)
             except ValueError as exc:

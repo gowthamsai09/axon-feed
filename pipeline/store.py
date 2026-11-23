@@ -39,11 +39,19 @@ class StoredItem(RawItem):
     extract_tried: int = Field(0, ge=0, le=100)
 
 
+class SourceHealth(StrictModel):
+    """Per source: when it last returned items and since when it has returned none (Appendix C 83)."""
+
+    last_items_at: AwareDatetime | None = None
+    empty_since: AwareDatetime | None = None
+
+
 class Store(StrictModel):
     version: Literal[1] = 1
     saved_at: AwareDatetime
     items: list[StoredItem] = Field(default_factory=list)
     redirects: dict[str, str] = Field(default_factory=dict)
+    health: dict[str, SourceHealth] = Field(default_factory=dict)  # absent in older stores
 
 
 def load_store(path: Path, *, now: datetime) -> tuple[Store, list[str]]:

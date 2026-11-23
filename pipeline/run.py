@@ -29,6 +29,7 @@ from models.sources import SourceEntry
 from pipeline.canonicalize import item_id_for
 from pipeline.dedupe import Candidate, cluster
 from pipeline.extract import enrich
+from pipeline.health import Staleness, evaluate, update_health
 from pipeline.publish import write_feed
 from pipeline.redirects import DEFAULT_MAX_RESOLVES, resolve_redirects
 from pipeline.score import base_score
@@ -172,18 +173,26 @@ def collect_all(
 
 
 def source_health(
-    collected: dict[str, Collected], kept: dict[str, int], retained: dict[str, int] | None = None
+    collected: dict[str, Collected],
+    kept: dict[str, int],
+    retained: dict[str, int] | None = None,
+    staleness: dict[str, Staleness] | None = None,
 ) -> list[dict[str, Any]]:
     """`in_window` counts everything in the window, including `retained` items that only the
-    store still holds (the source no longer returns them)."""
-    rows = []
+    store still holds (the source no longer returns them). `empty_days`, `stale` and
+    `stale_after_days` are added when staleness is known (spec 11.1, Appendix C 83)."""
+    rows: list[dict[str, Any]] = []
     for sid, c in collected.items():
         status = "failed" if c.failed else ("empty" if c.fetched == 0 else "ok")
-        rows.append(
-            {"id": sid, "status": status, "fetched": c.fetched, "collected": len(c.items),
-             "in_window": kept.get(sid, 0), "retained": (retained or {}).get(sid, 0),
-             "warnings": c.warnings[:10]}
-        )  # fmt: skip
+        row: dict[str, Any] = {
+            "id": sid, "status": status, "fetched": c.fetched, "collected": len(c.items),
+            "in_window": kept.get(sid, 0), "retained": (retained or {}).get(sid, 0),
+            "warnings": c.warnings[:10],
+        }  # fmt: skip
+        found = (staleness or {}).get(sid)
+        if found is not None:
+            row.update(empty_days=found.empty_days, stale=found.stale, stale_after_days=found.threshold)
+        rows.append(row)
     return rows
 
 
@@ -266,13 +275,23 @@ def main(argv: list[str] | None = None) -> int:
         + res.warnings
         + (build_warnings if store_path else [])
     )
-    health = source_health(collected, kept, merged.retained)
+    got_items = {sid: c.fetched > 0 and not c.failed for sid, c in collected.items()}
+    new_health = update_health(previous.health, got_items, now, known=set(by_id))
+    staleness = {
+        sid: evaluate(
+            new_health.get(sid), now, threshold=by_id[sid].stale_after_days,
+            skip_weekends=by_id[sid].skip_weekends,
+        )
+        for sid in collected
+        if sid in by_id
+    }  # fmt: skip
+    health = source_health(collected, kept, merged.retained, staleness)
     counts = write_feed(
         args.out, res.items, res.entity_slugs, now=now, window_hours=args.window_hours,
         sources=health, warnings=warnings,
     )  # fmt: skip
     if store_path:
-        save_store(store_path, new_store)
+        save_store(store_path, new_store.model_copy(update={"health": new_health}))
     print(f"window {args.window_hours:g}h: {counts}")
     if store_path:
         n_kept = sum(merged.retained.values())
