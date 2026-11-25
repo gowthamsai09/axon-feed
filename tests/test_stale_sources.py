@@ -51,7 +51,13 @@ SPANS = [
     ("skip: two weeks hold four weekend days", utc(5), utc(19), True, 10.0),
     ("now before since", utc(20), utc(19), True, 0.0),
     ("now equals since", utc(19), utc(19), False, 0.0),
-    ("non-UTC input is converted first", datetime(2026, 10, 19, 5, 30, tzinfo=IST), utc(22), False, 3.0),
+    (
+        "non-UTC input is converted first",
+        datetime(2026, 10, 19, 5, 30, tzinfo=IST),
+        utc(22),
+        False,
+        3.0,
+    ),
 ]
 
 
@@ -118,7 +124,9 @@ def test_the_threshold_boundary_is_inclusive_and_one_second_short_is_not_stale()
     exactly = evaluate(health, utc(22), threshold=None, skip_weekends=False)
     assert exactly == Staleness(3.0, 3, True)
     short = evaluate(health, utc(22) - timedelta(seconds=1), threshold=None, skip_weekends=False)
-    assert short.stale is False and short.empty_days == 3.0  # the display rounds, the decision does not
+    assert (
+        short.stale is False and short.empty_days == 3.0
+    )  # the display rounds, the decision does not
 
 
 def test_a_per_source_threshold_overrides_the_default() -> None:

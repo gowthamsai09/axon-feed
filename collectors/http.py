@@ -28,10 +28,13 @@ class FetchError(Exception):
     """A fetch that should be logged and skipped, never fail the run (spec 5.2 step 1)."""
 
 
-# A host written as numbers that is not a canonical IP address (2130706433, 0x7f.1, 017700000001, 127.1,
-# fullwidth digits). Whatever a resolver would do with it, it is refused (Appendix C 84).
+# A host written as numbers that is not a canonical IP address (2130706433, 0x7f.1,
+# 017700000001, 127.1, fullwidth digits). Whatever a resolver would do with it, it is
+# refused (Appendix C 84).
 _NUMERIC_HOST = re.compile(r"(?:0[xX][0-9a-fA-F]*|\d+)(?:\.(?:0[xX][0-9a-fA-F]*|\d+))*\.?")
-_HOST_CHARS = re.compile(r"[\w.-]+")  # letters, digits, dot, hyphen, underscore (also non-ASCII letters)
+_HOST_CHARS = re.compile(
+    r"[\w.-]+"
+)  # letters, digits, dot, hyphen, underscore (also non-ASCII letters)
 
 
 def _is_public(ip: ipaddress.IPv4Address | ipaddress.IPv6Address) -> bool:
@@ -183,7 +186,8 @@ class Fetcher:
         started = self._clock()
         try:
             full = str(httpx.URL(url).copy_merge_params(params or {}))
-        except httpx.InvalidURL:
+            assert_public_url(full, resolve=False)
+        except (httpx.InvalidURL, ValueError):
             raise FetchError("invalid URL") from None
         allowed, note = self.robots.check(full)
         if not allowed:

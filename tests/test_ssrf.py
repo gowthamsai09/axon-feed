@@ -1,5 +1,6 @@
-"""SSRF suite for the feed's collectors (spec 10.1, Appendix C 84): the guard, the redirect resolver and
-the client hook. The shared URL corpus comes from the hub (HUB_DIR, default ../Axon); no network."""
+"""SSRF suite for the feed's collectors (spec 10.1, Appendix C 84): the guard, the redirect
+resolver and the client hook. The shared URL corpus comes from the hub (HUB_DIR, default ../Axon);
+no network."""
 
 from __future__ import annotations
 
@@ -19,7 +20,9 @@ ROOT = Path(__file__).resolve().parent.parent
 HUB = Path(os.environ.get("HUB_DIR", str(ROOT.parent / "Axon")))
 CORPUS = HUB / "corpus" / "ssrf" / "urls.json"
 REQUIRED = os.environ.get("REQUIRE_HUB_CORPUS") == "1"
-CASES: list[dict[str, Any]] = json.loads(CORPUS.read_text(encoding="utf-8")) if CORPUS.is_file() else []
+CASES: list[dict[str, Any]] = (
+    json.loads(CORPUS.read_text(encoding="utf-8")) if CORPUS.is_file() else []
+)
 needs_corpus = pytest.mark.skipif(
     not CASES and not REQUIRED, reason="hub corpus not found (set HUB_DIR)"
 )
@@ -43,7 +46,9 @@ def test_the_corpus_was_really_loaded() -> None:
 
 @needs_corpus
 @pytest.mark.parametrize("case", CASES, ids=lambda c: c["id"])
-def test_the_guard_follows_the_corpus(case: dict[str, Any], monkeypatch: pytest.MonkeyPatch) -> None:
+def test_the_guard_follows_the_corpus(
+    case: dict[str, Any], monkeypatch: pytest.MonkeyPatch
+) -> None:
     patch_dns(monkeypatch, case["dns"])
     if case["expect"] == "allowed":
         assert_public_url(case["url"], resolve=True)
@@ -54,7 +59,13 @@ def test_the_guard_follows_the_corpus(case: dict[str, Any], monkeypatch: pytest.
 
 @pytest.mark.parametrize(
     "url",
-    ["http://2130706433/", "http://0x7f000001/", "http://127.1/", "http://0/", "http://017700000001/"],
+    [
+        "http://2130706433/",
+        "http://0x7f000001/",
+        "http://127.1/",
+        "http://0/",
+        "http://017700000001/",
+    ],
 )
 def test_numeric_host_forms_are_refused_without_dns_even_when_not_resolving(
     url: str, monkeypatch: pytest.MonkeyPatch
@@ -71,11 +82,14 @@ def test_numeric_host_forms_are_refused_without_dns_even_when_not_resolving(
 @pytest.mark.parametrize(
     ("url", "message"),
     [
-        ("http://:@example.com/", "credentials"), ("http://example.com:99999/", "invalid port"),
-        ("http://exa mple.com/", "invalid host name"), ("http://%31%32%37.0.0.1/", "invalid host name"),
-        ("http://[::ffff:7f00:1]/", "non-public address"), ("http://[::1/", ""),
+        ("http://:@example.com/", "credentials"),
+        ("http://example.com:99999/", "invalid port"),
+        ("http://exa mple.com/", "invalid host name"),
+        ("http://%31%32%37.0.0.1/", "invalid host name"),
+        ("http://[::ffff:7f00:1]/", "non-public address"),
+        ("http://[::1/", "Invalid IPv6 URL"),
     ],
-)  # fmt: skip
+)
 def test_refusals_name_the_reason(url: str, message: str) -> None:
     with pytest.raises(ValueError, match=message):
         assert_public_url(url, resolve=False)
@@ -91,10 +105,18 @@ def test_a_host_that_cannot_be_resolved_stays_allowed_for_proxied_networks(
 # ---- the redirect resolver (Fetcher.resolve) ----------------------------------------------
 
 BAD_TARGETS = [
-    "ftp://example.com/x", "file:///etc/passwd", "javascript:alert(1)", "http://user:pw@example.com/",
-    "//evil.example@127.0.0.1/", "http://2130706433/", "http://0x7f.1/", "http://[::ffff:127.0.0.1]/",
-    "http://example.com:99999/", "http://169.254.169.254/latest/meta-data", "http://[::1/",
-]  # fmt: skip
+    "ftp://example.com/x",
+    "file:///etc/passwd",
+    "javascript:alert(1)",
+    "http://user:pw@example.com/",
+    "//evil.example@127.0.0.1/",
+    "http://2130706433/",
+    "http://0x7f.1/",
+    "http://[::ffff:127.0.0.1]/",
+    "http://example.com:99999/",
+    "http://169.254.169.254/latest/meta-data",
+    "http://[::1/",
+]
 
 
 @pytest.mark.parametrize("target", BAD_TARGETS)
@@ -164,5 +186,9 @@ def test_the_client_hook_stops_a_redirect_to_a_numeric_host_before_it_is_request
 
 
 def test_the_client_has_the_requested_timeout() -> None:
-    client = make_client("https://c.example", timeout=7.0, transport=httpx.MockTransport(lambda r: httpx.Response(200)))
+    client = make_client(
+        "https://c.example",
+        timeout=7.0,
+        transport=httpx.MockTransport(lambda r: httpx.Response(200)),
+    )
     assert client.timeout == httpx.Timeout(7.0)

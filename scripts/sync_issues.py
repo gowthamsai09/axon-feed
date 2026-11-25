@@ -5,9 +5,10 @@
 Reads the per-source rows the collect run wrote to meta.json (`stale`, `empty_days`, ...). A stale
 source gets ONE Issue titled `Stale source: <id>` with the label `source-stale`; the Issue is closed
 again when the source recovers. Idempotent: an open Issue is never duplicated, and a manually closed
-one is not reopened for 3 days. Runs in its own workflow step so the token never shares a process with
-the scraper. A GitHub failure is a warning, never a failed run: the exit code is 0 unless the input is
-unusable (2). Messages carry HTTP status codes only: never the token, a response body or feed text."""
+one is not reopened for 3 days. Runs in its own workflow step so the token never shares a process
+with the scraper. A GitHub failure is a warning, never a failed run: the exit code is 0 unless the
+input is unusable (2). Messages carry HTTP status codes only: never the token, a response body or
+feed text."""
 
 from __future__ import annotations
 
@@ -83,14 +84,20 @@ def parse_rows(meta: object) -> list[Row]:
         status = raw.get("status")
         days = raw.get("empty_days")
         limit = raw.get("stale_after_days")
-        good_days = isinstance(days, int | float) and not isinstance(days, bool)
-        good_limit = isinstance(limit, int) and not isinstance(limit, bool) and 1 <= limit <= 30
         rows.append(
             Row(
                 id=sid,
                 status=status if status in {"ok", "empty", "failed"} else "unknown",
-                empty_days=float(days) if good_days else 0.0,
-                threshold=limit if good_limit else 3,
+                empty_days=(
+                    float(days)
+                    if isinstance(days, int | float) and not isinstance(days, bool)
+                    else 0.0
+                ),
+                threshold=(
+                    limit
+                    if isinstance(limit, int) and not isinstance(limit, bool) and 1 <= limit <= 30
+                    else 3
+                ),
                 stale=raw.get("stale") is True,
             )
         )
@@ -119,9 +126,15 @@ def existing(raw: object) -> list[Existing]:
         if not isinstance(title, str) or not title.startswith(TITLE_PREFIX):
             continue
         sid = title[len(TITLE_PREFIX) :]
-        if SOURCE_ID.fullmatch(sid) is None or isinstance(number, bool) or not isinstance(number, int):
+        if (
+            SOURCE_ID.fullmatch(sid) is None
+            or isinstance(number, bool)
+            or not isinstance(number, int)
+        ):
             continue
-        found.append(Existing(number, sid, item.get("state") == "open", _when(item.get("closed_at"))))
+        found.append(
+            Existing(number, sid, item.get("state") == "open", _when(item.get("closed_at")))
+        )
     return found
 
 

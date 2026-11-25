@@ -40,7 +40,8 @@ class StoredItem(RawItem):
 
 
 class SourceHealth(StrictModel):
-    """Per source: when it last returned items and since when it has returned none (Appendix C 83)."""
+    """Per source: when it last returned items and since when it has returned none
+    (Appendix C 83)."""
 
     last_items_at: AwareDatetime | None = None
     empty_since: AwareDatetime | None = None

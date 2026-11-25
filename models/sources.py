@@ -24,9 +24,12 @@ class SourceEntry(StrictModel):
     repos: list[str] | None = None
     url_template: str | None = Field(None, max_length=2048)
     note: str | None = Field(None, max_length=500)
-    # Staleness (spec 11.1, Appendix C 83): an Issue opens after this many active days without any item.
+    # Staleness (spec 11.1, Appendix C 83): an Issue opens after this many active days
+    # without any item.
     stale_after_days: int | None = Field(None, ge=1, le=30)
-    skip_weekends: bool = False  # arXiv announces Monday to Friday: Saturday and Sunday do not count
+    skip_weekends: bool = (
+        False  # arXiv announces Monday to Friday: Saturday and Sunday do not count
+    )
 
     @model_validator(mode="after")
     def _type_rules(self) -> Self:

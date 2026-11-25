@@ -191,7 +191,9 @@ def source_health(
         }  # fmt: skip
         found = (staleness or {}).get(sid)
         if found is not None:
-            row.update(empty_days=found.empty_days, stale=found.stale, stale_after_days=found.threshold)
+            row.update(
+                empty_days=found.empty_days, stale=found.stale, stale_after_days=found.threshold
+            )
         rows.append(row)
     return rows
 
