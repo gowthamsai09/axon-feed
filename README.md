@@ -19,3 +19,7 @@ under `needs_research`; never add guessed feed URLs.
 **Stale sources:** a source that returns nothing for 3 days in a row (`stale_after_days` per source; `skip_weekends` for
 arXiv) opens one Issue labelled `source-stale`; it closes when the source recovers. The step is `scripts/sync_issues.py`
 (needs `issues: write`, never fails the run). Mocked tests only until the first push.
+
+## License
+
+Apache-2.0. See `LICENSE` and `NOTICE`.
